@@ -1,24 +1,25 @@
 import { combineReducers } from 'redux';
 
-const songReducer = () => {
-  return [
-    { title: 'No Scrubs', duration: '4:05' },
-    { title: 'Macarena', duration: '2:30' },
-    { title: 'All Star', duration: '3:15' },
-    { title: 'I Want it That Way', duration: '1:45' },
-  ];
+const postsReducer = (state = [], { type, payload }) => {
+  switch (type) {
+    case 'FETCH_POSTS':
+      return [...state, ...payload];
+
+    default:
+      return state;
+  }
 };
 
 const initialState = {
-  selectedSong: null,
+  selectedPost: null,
 };
 
-const selectedSongReducer = (
-  state = initialState.selectedSong,
+const selectedPostReducer = (
+  state = initialState.selectedPost,
   { type, payload }
 ) => {
   switch (type) {
-    case 'SONG_SELECTED':
+    case 'POST_SELECTED':
       return { ...state, ...payload };
 
     default:
@@ -27,6 +28,6 @@ const selectedSongReducer = (
 };
 
 export default combineReducers({
-  songs: songReducer,
-  selectedSong: selectedSongReducer,
+  posts: postsReducer,
+  selectedPost: selectedPostReducer,
 });
