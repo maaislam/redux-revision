@@ -7,7 +7,7 @@ const PostDetail = ({ selectedPost }) => {
   }
 
   return (
-    <div>
+    <div style={{ position: 'fixed' }}>
       <h3>Details for:</h3>
       <p>
         Title: {selectedPost.title}
