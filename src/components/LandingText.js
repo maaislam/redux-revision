@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Typography } from '@material-ui/core';
+
 import './LandingText.css';
 
-const LandingText = ({ skills, fullName }) => {
+const LandingText = ({ skills, fullName, mode }) => {
   const [skillCounter, setSkillCounter] = useState(0);
 
   const skillRef = useRef();
@@ -12,7 +13,7 @@ const LandingText = ({ skills, fullName }) => {
       if (skillRef.current.clientWidth < 100) {
         setSkillCounter(skillCounter + 1);
       }
-      console.log(skillRef.current.clientWidth);
+      //console.log(skillRef.current.clientWidth);
     }, 1200);
 
     return () => {
@@ -49,7 +50,12 @@ const LandingText = ({ skills, fullName }) => {
           </Typography>
         </span>
         &nbsp;&nbsp;
-        <span className='componentStyles' ref={skillRef}>
+        <span
+          className={`componentStyles ${
+            mode === 'light' ? 'dark-cursor' : 'light-cursor'
+          }`}
+          ref={skillRef}
+        >
           <Typography variant='h4'>
             {` ${
               skillCounter < skills.length
@@ -66,6 +72,7 @@ const LandingText = ({ skills, fullName }) => {
 LandingText.defaultProps = {
   skills: ['Engineer', 'Developer', 'Freelancer'],
   fullName: 'Arafat Islam',
+  mode: 'light',
 };
 
 export default LandingText;

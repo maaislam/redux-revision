@@ -16,7 +16,7 @@
   }
 
   .componentStyles::after{
-      background-color: rgb(0, 0, 0);
+     
       content: '';
       height:100%;
       position: absolute;
@@ -26,6 +26,15 @@
       width: 3px;
      
   }
+
+  .componentStyles.dark-cursor::after{
+    background-color: rgb(0, 0, 0);
+  }
+
+  .componentStyles.light-cursor::after{
+    background-color: rgb(255, 255, 255);
+  }
+
   .flexCenter {
     display: flex;
     justify-content: center;
