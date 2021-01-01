@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Typography } from '@material-ui/core';
 
+import VowelChecker from './VowelChecker';
 import './LandingText.css';
 
 const LandingText = ({ skills, fullName, mode, children }) => {
@@ -9,7 +10,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
   const skillRef = useRef();
 
   useEffect(() => {
-    const trial = setInterval(() => {
+    const timer = setInterval(() => {
       if (skillRef.current.clientWidth < 100) {
         setSkillCounter(skillCounter + 1);
       }
@@ -17,22 +18,11 @@ const LandingText = ({ skills, fullName, mode, children }) => {
     }, 1200);
 
     return () => {
-      clearInterval(trial);
+      clearInterval(timer);
     };
   }, [skillCounter]);
 
-  const vowelChecker = (str) => {
-    if (
-      str.charAt(0) === 'A' ||
-      str.charAt(0) === 'E' ||
-      str.charAt(0) === 'I' ||
-      str.charAt(0) === 'O' ||
-      str.charAt(0) === 'U'
-    ) {
-      return 'an ';
-    }
-    return 'a ';
-  };
+  const currentSkillIndex = skillCounter < skills.length ? skillCounter : 0;
 
   return (
     <div className='centerComponent'>
@@ -44,9 +34,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
         <span>
           <Typography variant='h4'>
             I'm&nbsp;
-            {vowelChecker(
-              skills[skillCounter < skills.length ? skillCounter : 0]
-            )}
+            <VowelChecker string={skills[currentSkillIndex]} />
           </Typography>
         </span>
         &nbsp;&nbsp;
