@@ -1,0 +1,57 @@
+.animated-bar {
+    content: '';
+    display: block;
+    height: 4px;
+    left: 0;
+    margin: 0 auto 0 auto;
+    position: relative;
+    right: 0;
+    width: 75px;
+
+}
+
+
+
+.bar-slider{
+    left: 0;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-name: barAnimation;
+    animation-timing-function: linear;
+   
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 4px;
+}
+.bar-slider{
+    
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-name: barAnimation;
+    animation-timing-function: linear;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 4px;
+}
+
+.secondSliderPosition{
+    left: 7px;
+}
+
+  @keyframes barAnimation {
+    0% {
+     
+        transform: translateX(0);     
+      
+    }
+    100% {
+       transform: translateX(75px);
+              
+      
+    }
+  }
+  

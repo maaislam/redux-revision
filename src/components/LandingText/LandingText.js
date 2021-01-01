@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core';
 
 import './LandingText.css';
 
-const LandingText = ({ skills, fullName, mode }) => {
+const LandingText = ({ skills, fullName, mode, children }) => {
   const [skillCounter, setSkillCounter] = useState(0);
 
   const skillRef = useRef();
@@ -65,6 +65,7 @@ const LandingText = ({ skills, fullName, mode }) => {
           </Typography>
         </span>
       </div>
+      {children}
     </div>
   );
 };
