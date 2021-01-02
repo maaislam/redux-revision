@@ -1,7 +1,7 @@
 import React from 'react';
 
 const VowelChecker = ({ string }) => {
-  const checker = (str) => {
+  const checker = (str = '') => {
     if (
       str.charAt(0) === 'A' ||
       str.charAt(0) === 'E' ||
