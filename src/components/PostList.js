@@ -1,45 +1,69 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Button, Typography, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
 
-import { fetchPosts, selectPost } from '../actions';
+import CardContent from '@material-ui/core/CardContent';
+import { selectPost, fetchPostsAndUsers } from '../actions';
 import UserHeader from './UserHeader';
 
-const PostList = ({ posts, fetchPosts, selectPost }) => {
+const useStyle = makeStyles({
+  componentStyles: {
+    fontStyle: 'italic',
+  },
+  cardStyles: {
+    backgroundColor: '#424242',
+  },
+});
+
+const PostList = ({ posts, fetchPostsAndUsers, selectPost, darkMode }) => {
+  const classes = useStyle();
   //const dispatch = useDispatch();
   useEffect(() => {
-    fetchPosts();
-  }, [fetchPosts]);
+    fetchPostsAndUsers();
+  }, [fetchPostsAndUsers]);
 
-  const renderList = posts.slice(0, 15).map((post, index) => {
+  const renderList = posts.map((post, index) => {
     return (
-      <div className='item' key={post.title}>
-        {post.userId}
-        <div className='right floated content'>
-          <button
-            className='ui button primary'
-            onClick={() => selectPost(post)}
-          >
-            Select{post.userId}
-          </button>
-        </div>
-        <div className='content'>{post.title}</div>
-        <div className='header'>
-          <UserHeader userId={post.userId} />
-        </div>
-      </div>
+      <Grid item xs={12} sm={6} key={index}>
+        <Card className={darkMode ? classes.cardStyles : ''}>
+          <CardContent>
+            <Typography className={classes.componentStyles} variant='h6'>
+              {post.title}
+            </Typography>
+
+            <UserHeader userId={post.userId} />
+
+            <Button
+              variant='contained'
+              color='secondary'
+              className=''
+              onClick={() => selectPost(post)}
+            >
+              Select
+            </Button>
+          </CardContent>
+        </Card>
+      </Grid>
     );
   });
 
-  return <div className='ui relaxed divided list'>{renderList}</div>;
+  return (
+    <Grid item container xs={12} spacing={5} alignContent='space-between'>
+      {renderList}
+    </Grid>
+  );
 };
 
 const mapStateToProps = (state) => {
   return {
     posts: state.posts,
+    darkMode: state.darkMode,
   };
 };
 
 export default connect(mapStateToProps, {
-  fetchPosts,
+  fetchPostsAndUsers,
   selectPost,
 })(PostList);

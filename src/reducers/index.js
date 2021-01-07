@@ -37,7 +37,18 @@ const userReducer = (state = [], { type, payload }) => {
   }
 };
 
+const darkModeReducer = (state = false, { type, payload }) => {
+  switch (type) {
+    case 'SET_DARK_MODE':
+      return !payload;
+
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
+  darkMode: darkModeReducer,
   posts: postsReducer,
   users: userReducer,
   selectedPost: selectedPostReducer,

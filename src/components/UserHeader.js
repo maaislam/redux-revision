@@ -1,25 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Typography } from '@material-ui/core';
+//import { fetchUser } from '../actions';
 
-import { fetchUser } from '../actions';
-
-const UserHeader = ({ fetchUser, userId, users }) => {
-  useEffect(() => {
+const UserHeader = ({ userId, users }) => {
+  /*useEffect(() => {
     fetchUser(userId);
     console.log(
       '🚀 ~ file: UserHeader.js ~ line 9 ~ useEffect ~ userId',
       userId
     );
-
-    // eslint-disable-next-line
-  }, []);
+  }, [userId, fetchUser]);*/
 
   const user = users.find((user) => user.id === userId);
 
   if (!user) {
     return null;
   }
-  return <div className='header'>{user.name}</div>;
+  return <Typography variant='subtitle1'>{user.name}</Typography>;
 };
 
 const mapStateToProps = (state) => {
@@ -28,4 +26,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchUser })(UserHeader);
+export default connect(mapStateToProps)(UserHeader);
