@@ -47,6 +47,12 @@
     transform: translate(-50%, -50%);
   }
 
+  .centerComponentX{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .secondary-margin {
     margin-top: 30px;
   }

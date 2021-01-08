@@ -53,7 +53,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
           </Typography>
         </span>
       </div>
-      {children}
+      <div className='centerComponentX secondary-margin'>{children}</div>
     </div>
   );
 };
@@ -61,7 +61,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
 LandingText.defaultProps = {
   skills: ['Engineer', 'Developer', 'Freelancer'],
   fullName: 'Arafat Islam',
-  mode: 'light',
+  mode: 'dark',
 };
 
 export default LandingText;

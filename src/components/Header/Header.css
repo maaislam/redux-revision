@@ -1,0 +1,20 @@
+
+
+.cool-link {
+    display: inline-block;
+   
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 5px;
+    background: #009e66;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+   
+}

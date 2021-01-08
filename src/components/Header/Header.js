@@ -3,7 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 
+import './Header.css';
 import logo from '../../logo/logo.svg';
+import logoBlack from '../../logo/logo-black.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DenseAppBar() {
+const Header = function DenseAppBar({ headerItems, mode }) {
   const classes = useStyles();
 
   return (
@@ -31,7 +33,10 @@ export default function DenseAppBar() {
           <Grid item xs={2}>
             <div>
               <NavLink to='/' exact className={classes.anchor}>
-                <img src={logo} alt='Arafat Islam' />
+                <img
+                  src={mode === 'dark' ? logo : logoBlack}
+                  alt='Arafat Islam'
+                />
               </NavLink>
             </div>
           </Grid>
@@ -44,49 +49,69 @@ export default function DenseAppBar() {
             </Grid>
             <Grid item xs={2}>
               <div className={classes.div}>
-                <NavLink to='/about' exact className={classes.anchor}>
+                <NavLink
+                  to='/about'
+                  exact
+                  className={`${classes.anchor} cool-link`}
+                >
                   <Typography variant='subtitle1' color='textPrimary'>
-                    About
+                    {headerItems.item1}
                   </Typography>
                 </NavLink>
               </div>
             </Grid>
             <Grid item xs={2}>
               <div className={classes.div}>
-                <NavLink to='/resume' exact className={classes.anchor}>
+                <NavLink
+                  to='/resume'
+                  exact
+                  className={`${classes.anchor} cool-link`}
+                >
                   <Typography variant='subtitle1' color='textPrimary'>
-                    Resume
+                    {headerItems.item2}
                   </Typography>
                 </NavLink>
               </div>
             </Grid>
             <Grid item xs={2}>
               <div className={classes.div}>
-                <NavLink to='/portfolio' exact className={classes.anchor}>
+                <NavLink
+                  to='/portfolio'
+                  exact
+                  className={`${classes.anchor} cool-link`}
+                >
                   <Typography
                     variant='subtitle1'
                     color='textPrimary'
                     align='center'
                   >
-                    Portfolio
+                    {headerItems.item3}
                   </Typography>
                 </NavLink>
               </div>
             </Grid>
             <Grid item xs={2}>
               <div className={classes.div}>
-                <NavLink to='/blog' exact className={classes.anchor}>
+                <NavLink
+                  to='/blog'
+                  exact
+                  className={`${classes.anchor} cool-link`}
+                >
                   <Typography variant='subtitle1' color='textPrimary'>
-                    Blog
+                    {headerItems.item4}
                   </Typography>
                 </NavLink>
               </div>
             </Grid>
             <Grid item xs={2}>
               <div className={classes.div}>
-                <NavLink to='/contact' exact className={classes.anchor}>
+                <NavLink
+                  to='/contact'
+                  exact
+                  className={`${classes.anchor} cool-link`}
+                >
                   <Typography variant='subtitle1' color='textPrimary'>
-                    Contact
+                    {headerItems.item5}
                   </Typography>
                 </NavLink>
               </div>
@@ -96,4 +121,6 @@ export default function DenseAppBar() {
       </Grid>
     </div>
   );
-}
+};
+
+export default Header;
