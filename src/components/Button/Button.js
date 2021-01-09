@@ -6,8 +6,8 @@ const ButtonTemplate = ({ colorScheme, text, btnType, clickHandler }) => {
   return (
     <span
       onClick={() => clickHandler()}
-      className={`btn btn-${colorScheme} ${
-        btnType === 'normal' ? '' : 'round'
+      className={` btn-${colorScheme} ${
+        btnType === 'normal' ? 'btn' : 'round'
       }`}
     >
       {text}

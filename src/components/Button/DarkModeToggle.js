@@ -17,12 +17,13 @@ const DarkModeToggle = ({ setDarkMode, darkMode }) => {
         colorScheme={darkMode ? 'white' : 'black'}
         text={
           !darkMode ? (
-            <FaCloudMoon size={32} style={{ paddingTop: '4px' }} />
+            <FaCloudMoon size={32} style={{ paddingTop: '5px' }} />
           ) : (
-            <CgSun color='#101010' size={32} style={{ paddingTop: '4px' }} />
+            <CgSun color='#101010' size={32} style={{ paddingTop: '5px' }} />
           )
         }
         clickHandler={clickHandler}
+        btnType='round'
       />
     </div>
   );

@@ -7,11 +7,22 @@
   
 }
 
+.round{
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 9px;
+    display: inline-block;
+    border-radius:50%;
+    cursor: pointer;
+    transition: all 0.1s;
+}
 
 
 .btn{
     text-transform: uppercase;
     text-decoration: none;
+    text-align: center;
     padding: 10px 26px;
     display: inline-block;
     border-radius:30px;
