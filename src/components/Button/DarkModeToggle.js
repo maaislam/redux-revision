@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { FaSun, FaCloudMoon } from 'react-icons/fa';
+import { FaCloudMoon } from 'react-icons/fa';
 import { CgSun } from 'react-icons/cg';
 import Button from './Button';
 import { setDarkMode } from '../../actions';
