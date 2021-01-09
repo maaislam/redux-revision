@@ -37,10 +37,10 @@ const userReducer = (state = [], { type, payload }) => {
   }
 };
 
-const darkModeReducer = (state = false, { type, payload }) => {
+const darkModeReducer = (state = null, { type, payload }) => {
   switch (type) {
     case 'SET_DARK_MODE':
-      return !payload;
+      return payload;
 
     default:
       return state;

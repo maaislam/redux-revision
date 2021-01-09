@@ -38,5 +38,5 @@ export const fetchUser = (id) => async (dispatch) => {
 
 export const setDarkMode = (payload) => ({
   type: 'SET_DARK_MODE',
-  payload,
+  payload: payload,
 });

@@ -1,9 +1,20 @@
+
+.btn-dark-mode{
+    position:fixed;
+    top:50%;
+    left:2%;
+    transform:translate(-2%, -50%);
+  
+}
+
+
+
 .btn{
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px 26px;
     display: inline-block;
-    border-radius: 30px;
+    border-radius:30px;
     cursor: pointer;
     transition: all 0.1s;
 }

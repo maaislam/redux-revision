@@ -5,10 +5,17 @@ import LandingText from '../components/LandingText/LandingText';
 import Button from '../components/Button/Button';
 
 const Home = ({ darkMode }) => {
+  const clickHandler = () => {
+    return;
+  };
   return (
     <div>
       <LandingText mode={darkMode ? 'dark' : 'light'}>
-        <Button colorScheme={darkMode ? 'white' : 'blue'} text='Contact Me' />
+        <Button
+          colorScheme={darkMode ? 'white' : 'blue'}
+          text='Contact Me'
+          clickHandler={clickHandler}
+        />
       </LandingText>
     </div>
   );
