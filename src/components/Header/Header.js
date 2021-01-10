@@ -1,15 +1,18 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography } from '@material-ui/core';
+import React, { useState } from 'react';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { Grid, useMediaQuery } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 
 import './Header.css';
-import logo from '../../logo/logo.svg';
+import MobileHeader from './MobileHeader';
+import MenuItem from './MenuItem';
+import logoWhite from '../../logo/logo-white.svg';
 import logoBlack from '../../logo/logo-black.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    position: 'relative',
+
     padding: '1rem 2rem',
   },
   div: {
@@ -25,100 +28,65 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = function DenseAppBar({ headerItems, mode }) {
   const classes = useStyles();
+  const theme = useTheme();
+  const screenMedium = useMediaQuery(theme.breakpoints.down('sm'));
+  const [menu, setMenu] = useState(false);
+
+  const toggleHandler = () => {
+    setMenu(!menu);
+  };
+
+  const renderHeader = () => {
+    if (screenMedium) {
+      return (
+        <MobileHeader
+          items={headerItems}
+          toggleHandler={toggleHandler}
+          status={menu}
+          mode={mode}
+        />
+      );
+    } else {
+      return <MenuItem items={headerItems} />;
+    }
+  };
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid container item xs={12} alignItems='center'>
-          <Grid item xs={2}>
+        <Grid
+          container
+          item
+          xs={12}
+          alignItems='center'
+          justify='space-between'
+        >
+          <Grid item xs={6} sm={4} md={3}>
             <div>
               <NavLink to='/' exact className={classes.anchor}>
                 <img
-                  src={mode === 'dark' ? logo : logoBlack}
+                  src={mode === 'dark' ? logoWhite : logoBlack}
                   alt='Arafat Islam'
                 />
               </NavLink>
             </div>
           </Grid>
-          <Grid item xs={4}>
-            <div className={classes.div}></div>
-          </Grid>
-          <Grid container item xs={6} alignItems='center'>
-            <Grid item xs={2}>
-              <div className={classes.div}></div>
-            </Grid>
-            <Grid item xs={2}>
-              <div className={classes.div}>
-                <NavLink
-                  to='/about'
-                  exact
-                  className={`${classes.anchor} cool-link`}
-                >
-                  <Typography variant='subtitle1' color='textPrimary'>
-                    {headerItems.item1}
-                  </Typography>
-                </NavLink>
-              </div>
-            </Grid>
-            <Grid item xs={2}>
-              <div className={classes.div}>
-                <NavLink
-                  to='/resume'
-                  exact
-                  className={`${classes.anchor} cool-link`}
-                >
-                  <Typography variant='subtitle1' color='textPrimary'>
-                    {headerItems.item2}
-                  </Typography>
-                </NavLink>
-              </div>
-            </Grid>
-            <Grid item xs={2}>
-              <div className={classes.div}>
-                <NavLink
-                  to='/portfolio'
-                  exact
-                  className={`${classes.anchor} cool-link`}
-                >
-                  <Typography
-                    variant='subtitle1'
-                    color='textPrimary'
-                    align='center'
-                  >
-                    {headerItems.item3}
-                  </Typography>
-                </NavLink>
-              </div>
-            </Grid>
-            <Grid item xs={2}>
-              <div className={classes.div}>
-                <NavLink
-                  to='/blog'
-                  exact
-                  className={`${classes.anchor} cool-link`}
-                >
-                  <Typography variant='subtitle1' color='textPrimary'>
-                    {headerItems.item4}
-                  </Typography>
-                </NavLink>
-              </div>
-            </Grid>
-            <Grid item xs={2}>
-              <div className={classes.div}>
-                <NavLink
-                  to='/contact'
-                  exact
-                  className={`${classes.anchor} cool-link`}
-                >
-                  <Typography variant='subtitle1' color='textPrimary'>
-                    {headerItems.item5}
-                  </Typography>
-                </NavLink>
-              </div>
-            </Grid>
+
+          <Grid
+            container
+            item
+            xs={6}
+            md={8}
+            alignItems='center'
+            justify='flex-end'
+          >
+            {renderHeader()}
           </Grid>
         </Grid>
       </Grid>
+      <span className={`menu-mobile slide-${menu === false ? 'out' : 'in'}`}>
+        <MenuItem items={headerItems} />
+      </span>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Home = ({ darkMode }) => {
     <div>
       <LandingText mode={darkMode ? 'dark' : 'light'}>
         <Button
-          colorScheme={darkMode ? 'white' : 'blue'}
+          colorScheme={darkMode ? 'white' : 'black'}
           text='Contact Me'
           clickHandler={clickHandler}
         />
