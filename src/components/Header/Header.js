@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
-
+import { AnimatePresence, motion } from 'framer-motion';
 import './Header.css';
 import MobileHeader from './MobileHeader';
 import MenuItem from './MenuItem';
 import logoWhite from '../../logo/logo-white.svg';
 import logoBlack from '../../logo/logo-black.svg';
+
+import {
+  menuToggleVariant,
+  menuToggleTransition,
+} from '../../animations/AnimationConfig';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,6 +56,22 @@ const Header = function DenseAppBar({ headerItems, mode }) {
     }
   };
 
+  const renderMenu = () => {
+    if (menu && screenMedium) {
+      return (
+        <motion.span
+          initial='out'
+          exit='out'
+          animate='in'
+          variants={menuToggleVariant}
+          className='menu-mobile'
+        >
+          <MenuItem items={headerItems} screenMed={screenMedium} />
+        </motion.span>
+      );
+    }
+  };
+
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
@@ -61,7 +82,7 @@ const Header = function DenseAppBar({ headerItems, mode }) {
           alignItems='center'
           justify='space-between'
         >
-          <Grid item xs={6} sm={4} md={3}>
+          <Grid item xs={6} sm={4} md={2}>
             <div>
               <NavLink to='/' exact className={classes.anchor}>
                 <img
@@ -84,9 +105,7 @@ const Header = function DenseAppBar({ headerItems, mode }) {
           </Grid>
         </Grid>
       </Grid>
-      <span className={`menu-mobile slide-${menu === false ? 'out' : 'in'}`}>
-        <MenuItem items={headerItems} />
-      </span>
+      <AnimatePresence>{renderMenu()}</AnimatePresence>
     </div>
   );
 };

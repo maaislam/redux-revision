@@ -22,6 +22,7 @@ const useStyle = makeStyles({
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    overflow: 'hidden',
   },
   rootDark: {
     backgroundImage: `url(${BackgroundDark})`,
