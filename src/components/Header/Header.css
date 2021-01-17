@@ -1,6 +1,6 @@
 .cool-link {
   display: inline-block;
-
+  transition: all .3s;
 }
 
 .cool-link::after {
@@ -10,6 +10,10 @@
   height: 5px;
   background: #009e66;
   transition: width .3s;
+}
+.cool-link:hover {
+  transform: translateX(20%) scale(1.2);
+
 }
 
 .cool-link:hover::after {
@@ -23,7 +27,7 @@
   z-index: 100;
   display: grid;
   place-items: center;
-  height: 35px;
+  height: 30px;
   width: 50px;
   position: relative;
   cursor: pointer;
@@ -39,21 +43,20 @@
 
 .menu-icon>span {
 
-  height: 2px;
-
+  height: 3px;
   display: block;
   transition: all 0.3s ease-in-out;
 }
 
 
 
-.menu-icon:hover span:nth-child(2) {
+.menu-icon:hover span {
   width: 35px;
 }
 
 .menu-icon.active span:nth-child(1) {
   transform-origin: center center;
-  transform: rotate(-45deg) translate(-8px, 7px);
+  transform: rotate(-45deg) translate(-6px, 8px);
   width: 35px;
 }
 
@@ -64,38 +67,41 @@
 
 .menu-icon.active span:nth-child(3) {
   transform-origin: center center;
-  transform: rotate(45deg) translate(-9px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
   width: 35px;
 }
 
 .line-1 {
-  width: 35px;
-  justify-self: end;
-}
-
-.line-2 {
   width: 25px;
   justify-self: end;
 }
 
+.line-2 {
+  width: 15px;
+  justify-self: end;
+}
+
 .line-3 {
-  width: 35px;
+  width: 30px;
   justify-self: end;
 }
 
 
 
 .menu-mobile {
-  display: block;
-  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 300px;
   height: 100vh;
   top: 0;
   right: 0%;
   position: absolute;
   z-index: 90;
-  background: #3d6bb3;
+  background: #616161;
  
-  backdrop-filter: blur(4px)
+  
 }
 
 .slide-out {

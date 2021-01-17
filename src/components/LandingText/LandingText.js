@@ -26,7 +26,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
 
   return (
     <div className='centerComponent'>
-      <Typography variant='h1' color='initial' display='inline' gutterBottom>
+      <Typography variant='h1' color='initial' gutterBottom>
         {fullName}
       </Typography>
 
@@ -44,7 +44,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
           }`}
           ref={skillRef}
         >
-          <Typography variant='h4'>
+          <Typography variant='h4' display='inline' align='left'>
             {` ${
               skillCounter < skills.length
                 ? skills[skillCounter]

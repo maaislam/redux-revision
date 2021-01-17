@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import { CssBaseline, Paper } from '@material-ui/core';
 
 import { connect } from 'react-redux';
@@ -14,8 +15,10 @@ import BackgroundDark from '../images/heroimage7-lg.jpg';
 import BackgroundLight from '../images/heroimage8-lg.jpg';
 
 import Home from '../pages/Home';
+import Resume from '../pages/Resume';
+import About from '../pages/About';
 
-const headerItems = ['About', 'Resume', 'Portfolio', 'Blog', 'Contact'];
+const headerItems = ['Home', 'About', 'Resume', 'Portfolio', 'Contact'];
 
 const useStyle = makeStyles({
   root: {
@@ -23,24 +26,27 @@ const useStyle = makeStyles({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     overflow: 'hidden',
+    height: '100vh',
   },
   rootDark: {
     backgroundImage: `url(${BackgroundDark})`,
-    backgroundColor: '#101010',
+
     height: '100vh',
   },
   rootLight: {
     backgroundImage: `linear-gradient(to right bottom,
       rgba(220, 233, 218, 0.4),
       rgba(230, 230, 230, 0.4)),url(${BackgroundLight})`,
-    backgroundColor: '#F5F5F5',
+
     height: '100vh',
   },
 });
 
 const App = ({ darkMode }) => {
   const mode = darkMode ? 'dark' : 'light';
+
   const classes = useStyle();
+  const { pathname } = useLocation();
 
   return (
     <ThemeProvider theme={theme(mode)}>
@@ -48,16 +54,25 @@ const App = ({ darkMode }) => {
       <Paper
         square
         variant='outlined'
-        className={`${mode === 'dark' ? classes.rootDark : classes.rootLight} ${
-          classes.root
-        } `}
+        className={`${
+          pathname === '/'
+            ? mode === 'dark'
+              ? classes.rootDark
+              : classes.rootLight
+            : 'test'
+        } ${classes.root} `}
       >
         <Header headerItems={headerItems} mode={mode} />
 
         <DarkModeToggle mode={mode} />
         <SocialBtn socialSite='github' />
         <SocialBtn socialSite='linkedin' />
-        <Home />
+
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/resume' component={Resume} />
+        </Switch>
       </Paper>
     </ThemeProvider>
   );

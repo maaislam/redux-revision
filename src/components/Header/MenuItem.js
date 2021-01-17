@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MenuItem = ({ items, screenMed }) => {
+const MenuItem = ({ items, screenMed, toggleHandler }) => {
   const classes = useStyles();
 
   const adjustedItems =
@@ -34,11 +34,12 @@ const MenuItem = ({ items, screenMed }) => {
         <Grid item xs={2}>
           <div className={classes.div}>
             <NavLink
-              to={`/${item}`.toLowerCase()}
+              onClick={() => toggleHandler()}
+              to={`/${item === 'Home' ? '' : item}`.toLowerCase()}
               exact
               className={`${classes.anchor} cool-link`}
             >
-              <Typography variant='subtitle1' color='textPrimary'>
+              <Typography variant='h6' color='textPrimary'>
                 {item}
               </Typography>
             </NavLink>

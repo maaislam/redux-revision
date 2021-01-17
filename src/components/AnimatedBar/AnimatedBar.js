@@ -1,12 +1,16 @@
 import React from 'react';
+import { useTheme } from '@material-ui/core/styles';
+
 import './AnimatedBar.css';
 
-const AnimatedBar = ({ barColor, sliderColor }) => {
+const AnimatedBar = ({ barColor }) => {
+  const { palette } = useTheme();
+
   const barBackColor = {
-    backgroundColor: barColor || ' #009e66',
+    backgroundColor: barColor || palette.success.main,
   };
   const sliderBackColor = {
-    backgroundColor: sliderColor || '#303030',
+    backgroundColor: palette.background.paper,
   };
 
   return (

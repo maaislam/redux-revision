@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
@@ -9,10 +9,7 @@ import MenuItem from './MenuItem';
 import logoWhite from '../../logo/logo-white.svg';
 import logoBlack from '../../logo/logo-black.svg';
 
-import {
-  menuToggleVariant,
-  menuToggleTransition,
-} from '../../animations/AnimationConfig';
+import { menuToggleVariant } from '../../animations/AnimationConfig';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,11 +28,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = function DenseAppBar({ headerItems, mode }) {
+const Header = ({ headerItems, mode }) => {
   const classes = useStyles();
   const theme = useTheme();
-  const screenMedium = useMediaQuery(theme.breakpoints.down('sm'));
+  const screenMedium = useMediaQuery(theme.breakpoints.down('md'));
+
   const [menu, setMenu] = useState(false);
+  const ref = useRef();
+  useEffect(() => {
+    const onBodyClick = (e) => {
+      if (ref.current && ref.current.contains(e.target)) {
+        return;
+      }
+      setMenu(false);
+    };
+
+    document.body.addEventListener('click', onBodyClick);
+
+    return () => {
+      document.body.removeEventListener('click', onBodyClick);
+    };
+  });
 
   const toggleHandler = () => {
     setMenu(!menu);
@@ -66,14 +79,18 @@ const Header = function DenseAppBar({ headerItems, mode }) {
           variants={menuToggleVariant}
           className='menu-mobile'
         >
-          <MenuItem items={headerItems} screenMed={screenMedium} />
+          <MenuItem
+            items={headerItems}
+            screenMed={screenMedium}
+            toggleHandler={toggleHandler}
+          />
         </motion.span>
       );
     }
   };
 
   return (
-    <div className={classes.root}>
+    <div ref={ref} className={classes.root}>
       <Grid container spacing={3}>
         <Grid
           container
@@ -87,7 +104,7 @@ const Header = function DenseAppBar({ headerItems, mode }) {
               <NavLink to='/' exact className={classes.anchor}>
                 <img
                   src={mode === 'dark' ? logoWhite : logoBlack}
-                  alt='Arafat Islam'
+                  alt='arafat islam'
                 />
               </NavLink>
             </div>

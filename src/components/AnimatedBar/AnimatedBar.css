@@ -1,7 +1,7 @@
 .animated-bar {
     content: '';
     display: block;
-    height: 4px;
+    height: 5px;
     left: 0;
     margin: 0 auto 0 auto;
     position: relative;
@@ -12,19 +12,7 @@
 
 
 
-.bar-slider{
-    left: 0;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-    animation-name: barAnimation;
-    animation-timing-function: linear;
-   
-    content: '';
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 4px;
-}
+
 .bar-slider{
     
     animation-duration: 2.5s;
