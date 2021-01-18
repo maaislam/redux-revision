@@ -11,7 +11,7 @@ const PageHeaderText = ({ subheading, headline, setStickyHeader }) => {
 
   const ref = useRef();
 
-  const observed = useOnScreen(ref);
+  const observed = useOnScreen(ref, '-200px');
   useEffect(() => {
     setOnScreen(observed);
     setStickyHeader(onScreen);
