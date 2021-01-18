@@ -12,7 +12,7 @@
   transition: width .3s;
 }
 .cool-link:hover {
-  transform: translateX(20%) scale(1.2);
+  transform: translateX(10%);
 
 }
 

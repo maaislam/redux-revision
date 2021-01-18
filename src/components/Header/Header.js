@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import './Header.css';
 import MobileHeader from './MobileHeader';
@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = ({ headerItems, mode, sticky }) => {
+  const { pathname } = useLocation();
   const classes = useStyles();
   const theme = useTheme();
   const screenMedium = useMediaQuery(theme.breakpoints.down('md'));
@@ -99,9 +100,11 @@ const Header = ({ headerItems, mode, sticky }) => {
   return (
     <div
       ref={ref}
-      className={`${!sticky ? classes.lockHeader : ''} ${classes.root}`}
+      className={`${!sticky && pathname !== '/' ? classes.lockHeader : ''} ${
+        classes.root
+      }`}
     >
-      <Grid container spacing={3}>
+      <Grid container spacing={0}>
         <Grid
           container
           item

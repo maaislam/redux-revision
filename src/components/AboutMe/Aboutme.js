@@ -71,7 +71,7 @@ const Aboutme = () => {
         item
         container
         spacing={2}
-        xs={11}
+        xs={10}
         sm={8}
         md={6}
         lg={5}

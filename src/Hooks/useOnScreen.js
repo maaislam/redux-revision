@@ -25,7 +25,7 @@ export default function useOnScreen(ref, rootMargin = '0px') {
 
     return () => {
       // eslint-disable-next-line
-      observer.unobserve(ref.current);
+      ref.current && observer.unobserve(ref.current);
     };
     // eslint-disable-next-line
   }, []); // Empty array ensures that effect is only run on mount and unmount

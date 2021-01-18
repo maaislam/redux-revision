@@ -8,7 +8,7 @@ const theme = (mode) => {
         main: '#009E66',
       },
       background: {
-        paper: mode === 'dark' ? '#101010' : '#cccccc',
+        paper: mode === 'dark' ? '#101010' : '#FFFFF0',
       },
     },
 
