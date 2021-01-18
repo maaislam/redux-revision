@@ -27,6 +27,21 @@ const theme = (mode) => {
           fontSize: '1.6rem',
         },
       },
+      h4: {
+        fontSize: '2rem',
+        '@media (max-width:960px)': {
+          fontSize: '1.6rem',
+        },
+        '@media (max-width:600px)': {
+          fontSize: '1.4rem',
+        },
+      },
+      subtitle1: {
+        fontSize: '0.9375rem',
+        '@media (max-width:600px)': {
+          fontSize: '0.875rem',
+        },
+      },
     },
   });
 };

@@ -13,9 +13,15 @@ import { menuToggleVariant } from '../../animations/AnimationConfig';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: 'relative',
-
+    position: 'fixed',
+    width: '100%',
     padding: '1rem 2rem',
+    zIndex: 100,
+    transition: 'all 0.3s',
+  },
+  lockHeader: {
+    backgroundColor: theme.palette.success.main,
+    padding: '0.5rem 2rem',
   },
   div: {
     padding: theme.spacing(4),
@@ -28,13 +34,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = ({ headerItems, mode }) => {
+const Header = ({ headerItems, mode, sticky }) => {
   const classes = useStyles();
   const theme = useTheme();
   const screenMedium = useMediaQuery(theme.breakpoints.down('md'));
+  const ref = useRef();
 
   const [menu, setMenu] = useState(false);
-  const ref = useRef();
+
   useEffect(() => {
     const onBodyClick = (e) => {
       if (ref.current && ref.current.contains(e.target)) {
@@ -65,7 +72,7 @@ const Header = ({ headerItems, mode }) => {
         />
       );
     } else {
-      return <MenuItem items={headerItems} />;
+      return <MenuItem items={headerItems} toggleHandler={toggleHandler} />;
     }
   };
 
@@ -90,7 +97,10 @@ const Header = ({ headerItems, mode }) => {
   };
 
   return (
-    <div ref={ref} className={classes.root}>
+    <div
+      ref={ref}
+      className={`${!sticky ? classes.lockHeader : ''} ${classes.root}`}
+    >
       <Grid container spacing={3}>
         <Grid
           container

@@ -4,6 +4,7 @@
     top:75%;
     left:2%;
     transform:translate(-2%, -75%);
+    z-index: 50;
   
 }
 
@@ -12,6 +13,7 @@
     top:85%;
     left:2%;
     transform:translate(-2%, -85%);
+    z-index: 50;
 }
 
 .pos-linkedin{
@@ -19,6 +21,7 @@
     top:95%;
     left:2%;
     transform:translate(-2%, -95%);
+    z-index: 50;
     
 }
 @media (max-width:600px){
@@ -53,6 +56,7 @@
     border-radius:50%;
     cursor: pointer;
     transition: all 0.1s;
+   
 }
 
 
@@ -65,6 +69,8 @@
     border-radius:30px;
     cursor: pointer;
     transition: all 0.1s;
+
+    
 }
 .btn:hover {
    
@@ -106,8 +112,7 @@
 }
 .btn-green {
     position: relative;
-    background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
-    background-image: linear-gradient(to bottom right, #7ed56f, #28b485);
+    background-color: #009e66;
     color: white;
     font-weight: 400;
     font-size: 1.0rem;
@@ -164,7 +169,7 @@
 }
 .btn-green::after {
     
-    background-image: linear-gradient(to bottom right, #7ed56f, #28b485);
+    background-color: #009e66;
 }
 .btn-blue::after {
     background-image: linear-gradient(to bottom right, #60a3fa, #6c63ff);

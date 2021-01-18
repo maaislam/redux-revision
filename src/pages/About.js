@@ -1,11 +1,15 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+
+import PageHeaderText from '../components/PageHeaderText/PageHeaderText';
 import AnimatedBar from '../components/AnimatedBar/AnimatedBar';
+
+import Aboutme from '../components/AboutMe/Aboutme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(10),
+    marginTop: '8rem',
   },
 }));
 
@@ -17,26 +21,12 @@ const About = () => {
       <Grid item container spacing={0} xs={12}>
         <Grid item xs={1} />
         <Grid item xs={10}>
-          <Typography
-            variant='subtitle1'
-            color='textSecondary'
-            align='center'
-            gutterBottom
-          >
-            Get to know me
-          </Typography>
-          <Typography
-            variant='h3'
-            color='textPrimary'
-            align='center'
-            gutterBottom
-          >
-            <b>About Me</b>
-          </Typography>
+          <PageHeaderText subheading='Get to know me' headline='About Me' />
           <AnimatedBar />
         </Grid>
         <Grid item xs={1} />
       </Grid>
+      <Aboutme />
     </Grid>
   );
 };

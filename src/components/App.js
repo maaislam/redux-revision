@@ -25,7 +25,7 @@ const useStyle = makeStyles({
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    overflow: 'hidden',
+    overflowX: 'hidden',
     height: '100vh',
   },
   rootDark: {
@@ -42,7 +42,7 @@ const useStyle = makeStyles({
   },
 });
 
-const App = ({ darkMode }) => {
+const App = ({ darkMode, stickyHeader }) => {
   const mode = darkMode ? 'dark' : 'light';
 
   const classes = useStyle();
@@ -62,7 +62,7 @@ const App = ({ darkMode }) => {
             : 'test'
         } ${classes.root} `}
       >
-        <Header headerItems={headerItems} mode={mode} />
+        <Header headerItems={headerItems} mode={mode} sticky={stickyHeader} />
 
         <DarkModeToggle mode={mode} />
         <SocialBtn socialSite='github' />
@@ -81,6 +81,7 @@ const App = ({ darkMode }) => {
 const mapStateToProps = (state) => {
   return {
     darkMode: state.darkMode,
+    stickyHeader: state.stickyHeader,
   };
 };
 

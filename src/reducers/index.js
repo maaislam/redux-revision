@@ -46,8 +46,18 @@ const darkModeReducer = (state = null, { type, payload }) => {
       return state;
   }
 };
+const stickyHeaderReducer = (state = null, { type, payload }) => {
+  switch (type) {
+    case 'SET_STICKY_HEADER':
+      return payload;
+
+    default:
+      return state;
+  }
+};
 
 export default combineReducers({
+  stickyHeader: stickyHeaderReducer,
   darkMode: darkModeReducer,
   posts: postsReducer,
   users: userReducer,

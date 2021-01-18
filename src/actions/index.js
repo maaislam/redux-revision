@@ -40,3 +40,7 @@ export const setDarkMode = (payload) => ({
   type: 'SET_DARK_MODE',
   payload: payload,
 });
+export const setStickyHeader = (payload) => ({
+  type: 'SET_STICKY_HEADER',
+  payload: payload,
+});
