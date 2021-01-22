@@ -1,26 +1,30 @@
 .componentStyles {
+    
+    text-align: left;
     position: relative;
-    width: 190px;
+    width: auto;
+    max-width: max-content;
     height: auto;
-    animation: 1.5s ease-in-out infinite alternate shuffle-skills;
-    overflow: clip;
+    animation: 1.7s ease-in-out infinite alternate shuffle-skills;
+   
     
   }
 
-  @keyframes shuffle-skills {
-    0% {width: 0px;overflow: clip}
-    20% {width: 2px;overflow: clip}
-    60% {width: 190px; ;}
-    80% {width: 190px; ;}
-    100% {width: 190px; ;}
-  }
-
+  
+    @keyframes shuffle-skills {
+      0% {width: 0px;overflow: clip; }
+      20% {width: 2px;overflow: clip}
+      60% {width: 35%; }
+      80% {width: 35%; }
+      100% {width: 35%; }
+    }
+    
   .componentStyles::after{
      
       content: '';
       height:100%;
       position: absolute;
-      right: 0;
+      right:0px;
       top: 50%;
       transform: translateY(-50%);
       width: 3px;

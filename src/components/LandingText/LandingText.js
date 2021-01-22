@@ -50,6 +50,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
                 ? skills[skillCounter]
                 : setSkillCounter(0)
             }`}
+            &nbsp;
           </Typography>
         </span>
       </div>
@@ -59,7 +60,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
 };
 
 LandingText.defaultProps = {
-  skills: ['Engineer', 'Developer', 'Freelancer'],
+  skills: ['Engineer ', 'Developer ', 'Freelancer '],
   fullName: 'Arafat Islam',
   mode: 'dark',
 };

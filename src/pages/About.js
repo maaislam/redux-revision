@@ -29,8 +29,8 @@ const About = () => {
           <SectionHeaderTex
             subheading='Skills I offer to my clients'
             headline='My Skills'
-            headerType='h4'
-            alignment='left'
+            headerType='h3'
+            alignment='center'
           />
         </Grid>
         <Grid item xs={1} />
