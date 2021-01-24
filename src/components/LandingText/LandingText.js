@@ -26,7 +26,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
 
   return (
     <div className='centerComponent'>
-      <Typography variant='h1' color='initial' gutterBottom>
+      <Typography variant='h1' color='initial'>
         {fullName}
       </Typography>
 

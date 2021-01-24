@@ -7,6 +7,9 @@ import { ThemeProvider } from '@material-ui/core/styles';
 
 import { makeStyles } from '@material-ui/core/styles';
 import theme from './theme';
+
+import { AnimatePresence } from 'framer-motion';
+
 import DarkModeToggle from '../components/Button/DarkModeToggle';
 import SocialBtn from '../components/Button/SocialBtn';
 import Header from './Header/Header';
@@ -46,7 +49,7 @@ const App = ({ darkMode, stickyHeader }) => {
   const mode = darkMode ? 'dark' : 'light';
 
   const classes = useStyle();
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   return (
     <ThemeProvider theme={theme(mode)}>
@@ -55,7 +58,7 @@ const App = ({ darkMode, stickyHeader }) => {
         square
         variant='outlined'
         className={`${
-          pathname === '/'
+          location.pathname === '/'
             ? mode === 'dark'
               ? classes.rootDark
               : classes.rootLight
@@ -67,12 +70,13 @@ const App = ({ darkMode, stickyHeader }) => {
         <DarkModeToggle mode={mode} />
         <SocialBtn socialSite='github' />
         <SocialBtn socialSite='linkedin' />
-
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/resume' component={Resume} />
-        </Switch>
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.pathname}>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/resume' component={Resume} />
+          </Switch>
+        </AnimatePresence>
       </Paper>
     </ThemeProvider>
   );

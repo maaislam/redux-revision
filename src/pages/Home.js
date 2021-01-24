@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { motion } from 'framer-motion';
+import { PageAnimation3 } from '../animations/AnimationConfig';
+
 import LandingText from '../components/LandingText/LandingText';
 import Button from '../components/Button/Button';
 
@@ -9,7 +12,7 @@ const Home = ({ darkMode }) => {
     return;
   };
   return (
-    <div>
+    <motion.div initial='out' exit='out' animate='in' variants={PageAnimation3}>
       <LandingText mode={darkMode ? 'dark' : 'light'}>
         <Button
           colorScheme={darkMode ? 'white' : 'black'}
@@ -17,7 +20,7 @@ const Home = ({ darkMode }) => {
           clickHandler={clickHandler}
         />
       </LandingText>
-    </div>
+    </motion.div>
   );
 };
 const mapStateToProps = (state) => {

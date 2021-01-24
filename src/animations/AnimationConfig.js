@@ -38,3 +38,58 @@ export const menuItemVariant = {
     },
   },
 };
+
+export const PageAnimation = {
+  in: {
+    transform: 'scale(1)',
+    filter: 'blur(0px)',
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.47, 0, 0.745, 0.715],
+    },
+  },
+  out: {
+    transform: 'scale(1.2)',
+    filter: 'blur(4px)',
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.47, 0, 0.745, 0.715],
+    },
+  },
+};
+export const PageAnimation2 = {
+  in: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      ease: [0.47, 0, 0.745, 0.715],
+    },
+  },
+  out: {
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.47, 0, 0.745, 0.715],
+    },
+  },
+};
+export const PageAnimation3 = {
+  in: {
+    opacity: 1,
+
+    transition: {
+      duration: 0.5,
+      ease: [0.47, 0, 0.745, 0.715],
+    },
+  },
+  out: {
+    opacity: 0,
+
+    transition: {
+      duration: 0.5,
+      ease: [0.47, 0, 0.745, 0.715],
+    },
+  },
+};
