@@ -1,0 +1,28 @@
+
+
+.skill{
+    position: relative;
+    
+    
+}
+
+
+
+.skill::after {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 0;
+    bottom:0;
+    width: 0;
+    height: 5px;
+    background: #009e66;
+    transition: width .3s ease-in-out;
+}
+
+  
+  .skill:hover::after {
+    width: 100%;
+  
+  }
+  

@@ -18,17 +18,15 @@ export default function useOnScreen(ref, rootMargin = '0px') {
         rootMargin,
       }
     );
-
-    if (ref.current) {
-      observer.observe(ref.current);
+    let el = ref.current;
+    if (el) {
+      observer.observe(el);
     }
 
     return () => {
-      // eslint-disable-next-line
-      ref.current && observer.unobserve(ref.current);
+      el && observer.unobserve(el);
     };
-    // eslint-disable-next-line
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  }, [ref, rootMargin]); // Empty array ensures that effect is only run on mount and unmount
 
   return isIntersecting;
 }

@@ -10,11 +10,19 @@ const SocialBtn = ({ darkMode, socialSite }) => {
   const [icon, setIcon] = useState({});
 
   useEffect(() => {
-    if (socialSite === 'github') {
-      setIcon(icons.githubIcon);
-    } else if (socialSite === 'linkedin') {
-      setIcon(icons.linkedinIcon);
+    let mounted = true;
+
+    if (mounted) {
+      if (socialSite === 'github') {
+        setIcon(icons.githubIcon);
+      } else if (socialSite === 'linkedin') {
+        setIcon(icons.linkedinIcon);
+      }
     }
+
+    return () => {
+      mounted = false;
+    };
     // eslint-disable-next-line
   }, [darkMode]);
 

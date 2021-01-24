@@ -2,14 +2,18 @@ import React from 'react';
 import { Typography, Card, CardContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     position: 'relative',
-    maxWidth: '550px',
+    width: '100%',
+    maxWidth: '100%',
     padding: '1rem 2rem',
     borderLeft: '3px solid',
+    borderBottom: '1px solid',
+    borderBottomColor: theme.palette.grey.A400,
     borderLeftColor: '#009e66',
     borderRadius: 0,
+    backgroundColor: theme.palette.cardColor.main,
   },
   bullet: {
     content: '',
@@ -33,7 +37,7 @@ const useStyles = makeStyles({
     borderLeft: '8px solid #009e66',
     borderBottom: '8px solid transparent',
   },
-});
+}));
 
 const SkillOrEduListitem = ({ title, detail, description }) => {
   const classes = useStyles();
@@ -45,10 +49,10 @@ const SkillOrEduListitem = ({ title, detail, description }) => {
         <Typography variant='h5' className='item-title' gutterBottom>
           {title}
         </Typography>
-        <Typography variant='subtitle1' className='item-details' gutterBottom>
+        <Typography variant='subtitle1' gutterBottom color='textSecondary'>
           {detail}
         </Typography>
-        <Typography variant='subtitle2' className='item-description'>
+        <Typography variant='subtitle2' color='textSecondary'>
           {description}
         </Typography>
       </CardContent>

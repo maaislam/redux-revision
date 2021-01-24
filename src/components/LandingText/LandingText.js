@@ -11,11 +11,11 @@ const LandingText = ({ skills, fullName, mode, children }) => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (skillRef.current.clientWidth < 100) {
+      if (skillRef.current.clientWidth < 10) {
         setSkillCounter(skillCounter + 1);
       }
       //console.log(skillRef.current.clientWidth);
-    }, 1200);
+    }, 1500);
 
     return () => {
       clearInterval(timer);
@@ -45,12 +45,11 @@ const LandingText = ({ skills, fullName, mode, children }) => {
           ref={skillRef}
         >
           <Typography variant='h4' display='inline' align='left'>
-            {` ${
+            {`${
               skillCounter < skills.length
                 ? skills[skillCounter]
                 : setSkillCounter(0)
             }`}
-            &nbsp;
           </Typography>
         </span>
       </div>
@@ -60,7 +59,7 @@ const LandingText = ({ skills, fullName, mode, children }) => {
 };
 
 LandingText.defaultProps = {
-  skills: ['Engineer ', 'Developer ', 'Freelancer '],
+  skills: ['Engineer', 'Developer', 'Freelancer'],
   fullName: 'Arafat Islam',
   mode: 'dark',
 };

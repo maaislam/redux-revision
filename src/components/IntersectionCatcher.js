@@ -24,6 +24,8 @@ const SectionHeaderTex = ({ setStickyHeader }) => {
   useEffect(() => {
     setOnScreen(observed);
     setStickyHeader(onScreen);
+
+    return () => {};
   }, [observed, onScreen, setStickyHeader]);
 
   return (

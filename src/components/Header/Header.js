@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   lockHeader: {
     backgroundColor: theme.palette.success.main,
-    padding: '0.5rem 2rem',
+    padding: '0.25rem 2rem',
   },
   div: {
     padding: theme.spacing(4),
