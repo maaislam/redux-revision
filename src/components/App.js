@@ -75,6 +75,8 @@ const App = ({ darkMode, stickyHeader }) => {
             <Route exact path='/' component={Home} />
             <Route exact path='/about' component={About} />
             <Route exact path='/resume' component={Resume} />
+            <Route exact path='/portfolio' component={Home} />
+            <Route exact path='/contact' component={Home} />
           </Switch>
         </AnimatePresence>
       </Paper>

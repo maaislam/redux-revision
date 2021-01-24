@@ -181,11 +181,14 @@ const Aboutme = () => {
         </Grid>
         <Divider className={`${classes.gutterBottom} ${classes.gutterTop}`} />
         <Grid item xs={12} md={6}>
-          <Button
-            colorScheme='green'
-            text='Download CV'
-            clickHandler={clickHandler}
-          />
+          <a href='/arafat-resume.pdf' download="Arafat's Resume">
+            {' '}
+            <Button
+              colorScheme='green'
+              text='Download CV'
+              clickHandler={clickHandler}
+            />
+          </a>
         </Grid>
       </Grid>
     </Grid>

@@ -11,10 +11,10 @@
   background: #009e66;
   transition: width .3s;
 }
-.cool-link:hover {
+/*.cool-link:hover {
   transform: translateX(10%);
 
-}
+}*/
 
 .cool-link:hover::after {
   width: 100%;
