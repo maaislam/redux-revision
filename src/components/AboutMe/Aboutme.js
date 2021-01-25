@@ -85,9 +85,9 @@ const Aboutme = () => {
           <b>I'm Arafat Islam, a web developer, an Engineer and a Freelancer</b>
         </Typography>
         <Typography variant='subtitle1' color='textSecondary' gutterBottom>
-          Progress has driven a self-taught front-end developer. I have always
-          found coding intuitive and have pushed me to learn the most effective
-          ways to achieve a positive result. I love working with new
+          I am a progress-driven self-taught front-end developer. I have always
+          found coding intuitive and have always pushed myself to learn the most
+          effective ways to achieve a positive result. I love working with new
           technologies and collaborating with other developers. I am always
           willing to learn new technology stacks and embark on my next journey
           as a web developer and bring value to your company while working on

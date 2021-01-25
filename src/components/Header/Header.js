@@ -11,6 +11,8 @@ import logoBlack from '../../logo/logo-black.svg';
 
 import { menuToggleVariant } from '../../animations/AnimationConfig';
 
+import useBodyClick from '../../Hooks/useBodyClick';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'fixed',
@@ -22,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
   lockHeader: {
     backgroundColor: theme.palette.success.main,
     padding: '0.25rem 2rem',
+    '@media (max-width:1280px)': {
+      padding: '1rem 2rem',
+    },
   },
   div: {
     padding: theme.spacing(4),
@@ -42,21 +47,11 @@ const Header = ({ headerItems, mode, sticky }) => {
   const ref = useRef();
 
   const [menu, setMenu] = useState(false);
+  const bodyClick = useBodyClick(ref);
 
   useEffect(() => {
-    const onBodyClick = (e) => {
-      if (ref.current && ref.current.contains(e.target)) {
-        return;
-      }
-      setMenu(false);
-    };
-
-    document.body.addEventListener('click', onBodyClick);
-
-    return () => {
-      document.body.removeEventListener('click', onBodyClick);
-    };
-  });
+    bodyClick && setMenu(false);
+  }, [bodyClick]);
 
   const toggleHandler = () => {
     setMenu(!menu);
