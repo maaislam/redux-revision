@@ -18,11 +18,11 @@ export default function SimpleAccordion({ details }) {
 
   const renderDetails = details.map((detail, index) => {
     return (
-      <li key={index}>
+      <Grid container key={index} wrap='nowrap'>
         <Typography variant='subtitle2' color='textSecondary' gutterBottom>
-          {detail}
+          &#8226; {detail}
         </Typography>
-      </li>
+      </Grid>
     );
   });
 
