@@ -5,15 +5,15 @@
   
     width: 110%;
     animation: 1.5s linear infinite alternate shuffle-skills;
-    overflow:clip;
+    overflow:hidden;
     
   }
 
   
     @keyframes shuffle-skills {
-      0% {width: 0px;overflow:clip;padding-right: 0;}
-      20% {width: 2px;overflow:clip;}
-      40% {width: 40%;overflow:clip;}
+      0% {width: 0px;overflow:hidden;padding-right: 0;}
+      20% {width: 2px;overflow:hidden;}
+      40% {width: 40%;overflow:hidden;}
       60% {width: 60%;padding-right:10px;}
       80% {width: 80%; padding-right:10px;}
       100% {width: 100%;padding-right:10px;}
