@@ -16,7 +16,7 @@ export const menuToggleVariant = {
       duration: 0.3,
       ease: [0.55, 0.085, 0.68, 0.53],
       when: 'afterChildren',
-      staggerChildren: 0.03,
+      staggerChildren: 0.02,
     },
   },
 };
@@ -80,7 +80,8 @@ export const PageAnimation3 = {
     opacity: 1,
 
     transition: {
-      duration: 0.5,
+      delay: 0.5,
+      duration: 0.3,
       ease: [0.47, 0, 0.745, 0.715],
     },
   },
@@ -88,7 +89,8 @@ export const PageAnimation3 = {
     opacity: 0,
 
     transition: {
-      duration: 0.5,
+      delay: 0.5,
+      duration: 0.3,
       ease: [0.47, 0, 0.745, 0.715],
     },
   },

@@ -26,7 +26,14 @@ const Resume = () => {
           />
           <AnimatedBar />
         </Grid>
-        <Grid container item xs={10} spacing={6} justify='space-between'>
+        <Grid
+          container
+          item
+          xs={12}
+          lg={10}
+          spacing={4}
+          justify='space-between'
+        >
           <Grid item xs={12} md={6}>
             <Education headline='Education' data={eduDetails} />
           </Grid>
