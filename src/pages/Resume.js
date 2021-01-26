@@ -46,7 +46,7 @@ const Resume = () => {
         </Grid>
         <Grid container item xs={12}>
           <Grid item xs={1} />
-          <Grid item xs={10}>
+          <Grid item xs={5}>
             <Testimonial />
           </Grid>
           <Grid item xs={1} />
