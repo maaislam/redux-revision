@@ -12,7 +12,7 @@ import { PageAnimation3 } from '../animations/AnimationConfig';
 import { eduDetails, expDetails } from '../data/MyData';
 import Education from '../sections/Education';
 
-import Carousels from '../components/Carousels/Carousels';
+//import Carousels from '../components/Carousels/Carousels';
 import Testimonial from '../components/Testimonial/Testimonial';
 
 const Resume = () => {
