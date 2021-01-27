@@ -11,11 +11,11 @@ const LandingText = ({ skills, fullName, mode, children }) => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (skillRef.current.clientWidth < 100) {
-        setSkillCounter(skillCounter + 1);
-      }
+      //if (skillRef.current.clientWidth < 100) {
+      setSkillCounter(skillCounter + 1);
+      // }
       //console.log(skillRef.current.clientWidth);
-    }, 1500);
+    }, 3000);
 
     return () => {
       clearInterval(timer);
