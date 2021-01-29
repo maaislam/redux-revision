@@ -21,11 +21,14 @@ const SectionHeaderTex = ({ setStickyHeader }) => {
   const ref = useRef();
 
   const observed = useOnScreen(ref);
+
   useEffect(() => {
     setOnScreen(observed);
     setStickyHeader(onScreen);
 
-    return () => {};
+    return () => {
+      setStickyHeader(false);
+    };
   }, [observed, onScreen, setStickyHeader]);
 
   return (

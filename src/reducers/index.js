@@ -46,7 +46,7 @@ const darkModeReducer = (state = true, { type, payload }) => {
       return state;
   }
 };
-const stickyHeaderReducer = (state = null, { type, payload }) => {
+const stickyHeaderReducer = (state = false, { type, payload }) => {
   switch (type) {
     case 'SET_STICKY_HEADER':
       return payload;

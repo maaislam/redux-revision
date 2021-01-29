@@ -80,7 +80,7 @@ export const PageAnimation3 = {
     opacity: 1,
 
     transition: {
-      delay: 0.5,
+      delay: 0.2,
       duration: 0.3,
       ease: [0.47, 0, 0.745, 0.715],
     },
@@ -89,7 +89,7 @@ export const PageAnimation3 = {
     opacity: 0,
 
     transition: {
-      delay: 0.5,
+      delay: 0.2,
       duration: 0.3,
       ease: [0.47, 0, 0.745, 0.715],
     },

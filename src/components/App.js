@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { CssBaseline, Paper } from '@material-ui/core';
 
@@ -17,9 +17,11 @@ import Header from './Header/Header';
 import BackgroundDark from '../images/heroimage7-lg.jpg';
 import BackgroundLight from '../images/heroimage8-lg.jpg';
 
-import Home from '../pages/Home';
-import Resume from '../pages/Resume';
-import About from '../pages/About';
+import Loader from './Loader';
+
+const Home = lazy(() => import('../pages/Home'));
+const Resume = lazy(() => import('../pages/Resume'));
+const About = lazy(() => import('../pages/About'));
 
 const headerItems = ['Home', 'About', 'Resume', 'Portfolio', 'Contact'];
 
@@ -72,11 +74,13 @@ const App = ({ darkMode, stickyHeader }) => {
         <SocialBtn socialSite='linkedin' />
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/resume' component={Resume} />
-            <Route exact path='/portfolio' component={Home} />
-            <Route exact path='/contact' component={Home} />
+            <Suspense fallback={<Loader />}>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/about' component={About} />
+              <Route exact path='/resume' component={Resume} />
+              <Route exact path='/portfolio' component={Home} />
+              <Route exact path='/contact' component={Home} />
+            </Suspense>
           </Switch>
         </AnimatePresence>
       </Paper>

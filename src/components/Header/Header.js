@@ -95,7 +95,7 @@ const Header = ({ headerItems, mode, sticky }) => {
   return (
     <div
       ref={ref}
-      className={`${!sticky && pathname !== '/' ? classes.lockHeader : ''} ${
+      className={`${sticky && pathname !== '/' ? classes.lockHeader : ''} ${
         classes.root
       }`}
     >

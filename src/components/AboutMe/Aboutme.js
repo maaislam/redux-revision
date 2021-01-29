@@ -33,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
   linkColor: {
     color: theme.palette.success.main,
   },
+  imageClipper: {
+    '@media (max-width:600px)': {
+      clipPath: 'circle(32% at 49% 42%)',
+      marginBottom: 0,
+      transform: 'scale(1.3)',
+    },
+  },
 }));
 
 const Aboutme = () => {
@@ -59,7 +66,7 @@ const Aboutme = () => {
         md={5}
         lg={4}
         justify='center'
-        className={classes.gutterBottom}
+        className={`${classes.gutterBottom} ${classes.imageClipper}`}
       >
         <img
           className={classes.img}
