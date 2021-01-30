@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Grid } from '@material-ui/core';
 
 import SectionHeaderText from '../components/SectionHeaderText/SectionHeaderText';
@@ -6,23 +6,19 @@ import AnimatedBar from '../components/AnimatedBar/AnimatedBar';
 
 import { motion } from 'framer-motion';
 import { PageAnimation3 } from '../animations/AnimationConfig';
-//import IntersectionCatcher from '../components/IntersectionCatcher';
 
 import Aboutme from '../components/AboutMe/Aboutme';
 
 import Skills from '../sections/Skills';
-const IntersectionCatcher = lazy(() =>
-  import('../components/IntersectionCatcher')
-);
+import IntersectionCatcher from '../components/IntersectionCatcher';
+import Carousels from '../components/Carousels/Carousels';
 
 const About = () => {
   return (
     <motion.div initial='out' exit='out' animate='in' variants={PageAnimation3}>
       <Grid container spacing={2} direction='column' alignItems='center'>
         <Grid item xs={12} style={{ marginTop: '4rem' }}>
-          <Suspense>
-            <IntersectionCatcher />
-          </Suspense>
+          <IntersectionCatcher />
           <SectionHeaderText
             subheading='Get to know me'
             headline='About Me'
@@ -59,6 +55,13 @@ const About = () => {
             headerType='h3'
             alignment='center'
           />
+        </Grid>
+        <Grid container item xs={12}>
+          <Grid item xs={1} />
+          <Grid item xs={10} style={{ paddingBottom: '100px' }}>
+            <Carousels />
+          </Grid>
+          <Grid item xs={1} />
         </Grid>
       </Grid>
     </motion.div>

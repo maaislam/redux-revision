@@ -13,7 +13,6 @@ import { eduDetails, expDetails } from '../data/MyData';
 import Education from '../sections/Education';
 
 //import Carousels from '../components/Carousels/Carousels';
-import Testimonial from '../components/Testimonial/Testimonial';
 
 const Resume = () => {
   return (
@@ -43,13 +42,6 @@ const Resume = () => {
           <Grid item xs={12} md={6}>
             <Education headline='Experience' data={expDetails}></Education>
           </Grid>
-        </Grid>
-        <Grid container item xs={12}>
-          <Grid item xs={1} />
-          <Grid item xs={5}>
-            <Testimonial />
-          </Grid>
-          <Grid item xs={1} />
         </Grid>
       </Grid>
     </motion.div>

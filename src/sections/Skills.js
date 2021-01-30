@@ -16,8 +16,8 @@ import { SiRedux, SiJquery, SiTailwindcss } from 'react-icons/si';
 const Skills = () => {
   return (
     <>
-      <Grid item xs={1} md={2}></Grid>
-      <Grid item container xs={10} md={8} spacing={4} justify='center'>
+      <Grid item xs={1} md={2} lg={1}></Grid>
+      <Grid item container xs={10} md={8} lg={10} spacing={4} justify='center'>
         <Grid item xs={12} sm={6} md={4}>
           <MySkills skill='HTML5' skillColor='#e34f26'>
             <FaHtml5 size={64} />
@@ -64,7 +64,7 @@ const Skills = () => {
           </MySkills>
         </Grid>
       </Grid>
-      <Grid item xs={1} md={2}></Grid>
+      <Grid item xs={1} md={2} lg={1}></Grid>
     </>
   );
 };

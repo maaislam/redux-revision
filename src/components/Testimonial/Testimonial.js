@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.cardColor.main,
     padding: '48px 40px',
+    position: 'relative',
   },
   quotes: {
     color: theme.palette.success.main,
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Testimonial = () => {
+const Testimonial = ({ clientName, clientCompany, comments }) => {
   const classes = useStyles();
 
   return (
@@ -50,10 +51,10 @@ const Testimonial = () => {
             </Grid>
             <Grid item container spacing={1} direction='column'>
               <Typography variant='subtitle1' color='initial'>
-                Client 1
+                {clientName}
               </Typography>
               <Typography variant='subtitle2' color='textSecondary'>
-                Client 1 detail
+                {clientCompany}
               </Typography>
             </Grid>
           </Grid>
@@ -71,10 +72,7 @@ const Testimonial = () => {
 
         <Grid item container spacing={0}>
           <Typography variant='subtitle1' color='textSecondary'>
-            Emma did an excellent creative job, addressing our request quickly,
-            and also providing her own graphic insight, being open to feedback
-            and changes or edits when they arose. She worked with us the entire
-            way. Highly recommended.
+            {comments}
           </Typography>
         </Grid>
       </Grid>
