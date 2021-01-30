@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     overflowX: 'hidden',
   },
   img: {
-    maxWidth: '60%',
+    maxWidth: '80%',
     height: 'auto',
   },
   headline: {
@@ -62,7 +62,9 @@ const Aboutme = () => {
         container
         spacing={1}
         xs={10}
-        sm={5}
+        sm={6}
+        md={5}
+        lg={4}
         justify='center'
         className={`${classes.gutterBottom} ${classes.imageClipper}`}
       >
