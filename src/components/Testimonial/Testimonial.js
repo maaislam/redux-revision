@@ -5,8 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { IoMdQuote } from 'react-icons/io';
 
-import MyImage from '../../images/my-image-grey2.jpg';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.cardColor.main,
@@ -22,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Testimonial = ({ clientName, clientCompany, comments }) => {
+const Testimonial = ({ clientName, clientCompany, comments, clientImage }) => {
   const classes = useStyles();
 
   return (
@@ -47,7 +45,11 @@ const Testimonial = ({ clientName, clientCompany, comments }) => {
             alignItems='center'
           >
             <Grid item>
-              <Avatar alt='arafat' src={MyImage} className={classes.avatar} />
+              <Avatar
+                alt='arafat'
+                src={clientImage}
+                className={classes.avatar}
+              />
             </Grid>
             <Grid item container spacing={1} direction='column'>
               <Typography variant='subtitle1' color='initial'>

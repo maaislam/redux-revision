@@ -17,13 +17,14 @@ const Carousels = () => {
   const screenSmall = useMediaQuery(theme.breakpoints.down('sm'));
 
   const renderReview = reviews.map(
-    ({ clientName, clientCompany, comments }, i) => {
+    ({ clientName, clientCompany, comments, clientImage }, i) => {
       return (
         <SwiperSlide key={i}>
           <Testimonial
             clientName={clientName}
             clientCompany={clientCompany}
             comments={comments}
+            clientImage={clientImage}
           />
         </SwiperSlide>
       );
