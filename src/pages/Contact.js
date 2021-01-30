@@ -9,7 +9,7 @@ import IntersectionCatcher from '../components/IntersectionCatcher';
 import { motion } from 'framer-motion';
 import { PageAnimation3 } from '../animations/AnimationConfig';
 
-const Portfolio = () => {
+const Contact = () => {
   return (
     <motion.div initial='out' exit='out' animate='in' variants={PageAnimation3}>
       <Grid container spacing={2} direction='column' alignItems='center'>
@@ -33,4 +33,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Contact;

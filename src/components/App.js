@@ -22,6 +22,8 @@ import Loader from './Loader';
 const Home = lazy(() => import('../pages/Home'));
 const Resume = lazy(() => import('../pages/Resume'));
 const About = lazy(() => import('../pages/About'));
+const Portfolio = lazy(() => import('../pages/Portfolio'));
+const Contact = lazy(() => import('../pages/Contact'));
 
 const headerItems = ['Home', 'About', 'Resume', 'Portfolio', 'Contact'];
 
@@ -78,8 +80,8 @@ const App = ({ darkMode, stickyHeader }) => {
               <Route exact path='/' component={Home} />
               <Route exact path='/about' component={About} />
               <Route exact path='/resume' component={Resume} />
-              <Route exact path='/portfolio' component={Home} />
-              <Route exact path='/contact' component={Home} />
+              <Route exact path='/portfolio' component={Portfolio} />
+              <Route exact path='/contact' component={Contact} />
             </Suspense>
           </Switch>
         </AnimatePresence>
