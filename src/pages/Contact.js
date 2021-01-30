@@ -16,8 +16,8 @@ const Contact = () => {
         <Grid item xs={12} style={{ marginTop: '4rem' }}>
           <IntersectionCatcher />
           <SectionHeaderText
-            subheading='Showcasing some of my best work'
-            headline='Portfolio'
+            subheading='Feel free to contact me anytimes'
+            headline='Get in Touch'
             headerType='h3'
             alignment='center'
           />

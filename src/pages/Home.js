@@ -15,7 +15,7 @@ const Home = ({ darkMode }) => {
     <motion.div initial='out' exit='out' animate='in' variants={PageAnimation3}>
       <LandingText mode={darkMode ? 'dark' : 'light'}>
         <Button
-          colorScheme={darkMode ? 'white' : 'black'}
+          colorScheme={darkMode ? 'green' : 'black'}
           text='Contact Me'
           clickHandler={clickHandler}
         />
