@@ -10,33 +10,37 @@ import { motion } from 'framer-motion';
 import { PageAnimation3 } from '../animations/AnimationConfig';
 
 import Project from '../components/ProjectCard/Project';
+import ProjectDetail from '../components/ProjectCard/ProjectDetail';
 import projects from '../data/MyProjects';
 
 import Modal from '../components/Modal/Modal';
 
 const Portfolio = () => {
   const [modal, setModal] = useState(false);
+  const [projectDetails, setProjectDetails] = useState({});
 
   const modalClickHandler = (modalStatus) => {
     setModal(modalStatus);
   };
 
   const renderProjects = projects.map((item, i) => {
-    const { projectImage, title, excerpt } = item;
+    const { title, excerpt } = item;
 
     return (
       <Grid
         item
         key={i}
-        onClick={() => setModal(true)}
         xs={12}
         md={6}
         lg={4}
         xl={3}
+        onClick={() => {
+          setModal(true);
+          setProjectDetails(item);
+        }}
       >
         <Project
           imgSource={item.projectImage}
-          projectImage={projectImage}
           title={title}
           excerpt={excerpt}
         />
@@ -66,7 +70,11 @@ const Portfolio = () => {
           spacing={4}
         >
           {renderProjects}
-          {modal ? <Modal clickHandler={modalClickHandler} /> : null}
+          {modal ? (
+            <Modal clickHandler={modalClickHandler}>
+              <ProjectDetail {...projectDetails} />
+            </Modal>
+          ) : null}
         </Grid>
       </Grid>
     </motion.div>

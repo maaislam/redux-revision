@@ -7,7 +7,9 @@ const Modal = ({ children, clickHandler }) => {
   return ReactDOM.createPortal(
     <div className='root' onClick={() => clickHandler(false)}>
       <div className='close'></div>
-      {children}
+      <div className='modal-children' onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
     </div>,
     document.querySelector('#modal')
   );
