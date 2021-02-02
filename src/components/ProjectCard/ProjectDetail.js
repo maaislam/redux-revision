@@ -117,4 +117,8 @@ const ProjectDetail = ({
   );
 };
 
+ProjectDetail.defaultProps = {
+  techStacks: [],
+};
+
 export default ProjectDetail;
