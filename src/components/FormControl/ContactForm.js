@@ -22,7 +22,7 @@ const ContactForm = () => {
         Message Me
       </Typography>
       <Formik
-        initialValues={{ firstName: '', email: '', subject: '', message: '' }}
+        initialValues={{ name: '', email: '', subject: '', message: '' }}
         validationSchema={ValidationSchema}
         onSubmit={async (values, actions) => {
           console.log(
@@ -41,7 +41,7 @@ const ContactForm = () => {
               <Grid container spacing={5} direction='column'>
                 <Grid item container spacing={4} justify='space-between'>
                   <Grid item className='input-group' xs={12} sm={6}>
-                    <MyInput type='text' label='First Name' name='firstName' />
+                    <MyInput type='text' label='Name' name='name' />
                   </Grid>
                   <Grid item className='input-group' xs={12} sm={6}>
                     <MyInput type='text' label='Email Address' name='email' />

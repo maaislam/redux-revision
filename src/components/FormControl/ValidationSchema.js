@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 export const ValidationSchema = Yup.object({
-  firstName: Yup.string()
+  name: Yup.string()
 
     .max(15, 'Must be 15 characters or less')
 
