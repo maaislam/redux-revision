@@ -16,7 +16,15 @@ import ContactInfo from '../components/FormControl/ContactInfo';
 
 const Contact = () => {
   return (
-    <motion.div initial='out' exit='out' animate='in' variants={PageAnimation3}>
+    <motion.div
+      initial='out'
+      exit='out'
+      animate='in'
+      variants={PageAnimation3}
+      style={{
+        marginBottom: '10rem',
+      }}
+    >
       <Grid container spacing={2} direction='column' alignItems='center'>
         <Grid
           item
@@ -43,10 +51,10 @@ const Contact = () => {
           justify='center'
           style={{ marginTop: '4rem' }}
         >
-          <Grid item xs={8}>
+          <Grid item xs={12} md={8}>
             <ContactForm />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <ContactInfo />
           </Grid>
         </Grid>

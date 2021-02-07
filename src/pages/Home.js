@@ -12,7 +12,15 @@ const Home = ({ darkMode }) => {
     return;
   };
   return (
-    <motion.div initial='out' exit='out' animate='in' variants={PageAnimation3}>
+    <motion.div
+      initial='out'
+      exit='out'
+      animate='in'
+      variants={PageAnimation3}
+      style={{
+        marginBottom: '10rem',
+      }}
+    >
       <LandingText mode={darkMode ? 'dark' : 'light'}>
         <Button
           colorScheme={'green'}

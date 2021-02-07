@@ -29,7 +29,12 @@ const ContactInfo = () => {
         >
           Contact Info
         </Typography>
-        <Typography variant='h6' color='textSecondary' gutterBottom paragraph>
+        <Typography
+          variant='subtitle1'
+          color='textSecondary'
+          gutterBottom
+          paragraph
+        >
           Always available for freelance work if the right project comes along,
           Feel free to contact me!
         </Typography>
@@ -47,7 +52,7 @@ const ContactInfo = () => {
             xs={10}
             className={classes.constactCol}
           >
-            <Typography variant='h6' color='initial'>
+            <Typography variant='subtitle1' color='initial'>
               Name
             </Typography>
             <Typography variant='subtitle2' color='textSecondary' paragraph>
@@ -67,7 +72,7 @@ const ContactInfo = () => {
             xs={10}
             className={classes.constactCol}
           >
-            <Typography variant='h6' color='initial'>
+            <Typography variant='subtitle1' color='initial'>
               Location
             </Typography>
             <Typography variant='subtitle2' color='textSecondary' paragraph>
@@ -87,7 +92,7 @@ const ContactInfo = () => {
             xs={10}
             className={classes.constactCol}
           >
-            <Typography variant='h6' color='initial'>
+            <Typography variant='subtitle1' color='initial'>
               Call Me
             </Typography>
 
@@ -110,7 +115,7 @@ const ContactInfo = () => {
             xs={10}
             className={classes.constactCol}
           >
-            <Typography variant='h6' color='initial'>
+            <Typography variant='subtitle1' color='initial'>
               Email Me
             </Typography>
             <Link

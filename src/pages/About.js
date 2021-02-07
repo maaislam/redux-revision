@@ -15,7 +15,15 @@ import Carousels from '../components/Carousels/Carousels';
 
 const About = () => {
   return (
-    <motion.div initial='out' exit='out' animate='in' variants={PageAnimation3}>
+    <motion.div
+      initial='out'
+      exit='out'
+      animate='in'
+      variants={PageAnimation3}
+      style={{
+        marginBottom: '10rem',
+      }}
+    >
       <Grid container spacing={2} direction='column' alignItems='center'>
         <Grid item xs={12} style={{ marginTop: '4rem' }}>
           <IntersectionCatcher />

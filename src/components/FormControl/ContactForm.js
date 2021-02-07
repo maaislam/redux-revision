@@ -36,7 +36,8 @@ const ContactForm = () => {
       >
         <Grid container>
           <Grid item xs={12}>
-            <Form>
+            <Form name='contact' method='post'>
+              <input type='hidden' name='form-name' value='contact' />
               <Grid container spacing={5} direction='column'>
                 <Grid item container spacing={4} justify='space-between'>
                   <Grid item className='input-group' xs={12} sm={6}>
