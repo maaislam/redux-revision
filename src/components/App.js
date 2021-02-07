@@ -19,6 +19,10 @@ import BackgroundLight from '../images/heroimage8-lg.jpg';
 
 import Loader from './Loader';
 
+import { NotificationContainer } from 'react-notifications';
+//import 'react-notifications/lib/notifications.css';
+import '../helpers/showNotification.css';
+
 const Home = lazy(() => import('../pages/Home'));
 const Resume = lazy(() => import('../pages/Resume'));
 const About = lazy(() => import('../pages/About'));
@@ -74,6 +78,7 @@ const App = ({ darkMode, stickyHeader }) => {
         <DarkModeToggle mode={mode} />
         <SocialBtn socialSite='github' />
         <SocialBtn socialSite='linkedin' />
+        <NotificationContainer />
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
             <Suspense fallback={<Loader />}>

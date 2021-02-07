@@ -2,13 +2,20 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import { ValidationSchema } from './ValidationSchema';
 import { Grid, Typography } from '@material-ui/core';
+import axios from 'axios';
+
 import Button from '../Button/Button';
 import './form.css';
 import MyInput from './MyInput';
+import showNotification from '../../helpers/showNotification';
 
 const ContactForm = () => {
+  const notifier = (type) => {
+    showNotification(type);
+  };
+
   const clickHandler = () => {
-    return;
+    notifier('error');
   };
   return (
     <>
@@ -25,53 +32,63 @@ const ContactForm = () => {
         initialValues={{ name: '', email: '', subject: '', message: '' }}
         validationSchema={ValidationSchema}
         onSubmit={async (values, actions) => {
-          console.log(
-            '🚀 ~ file: ContactForm.js ~ line 19 ~ onSubmit={ ~ actions',
-            actions
-          );
-          await new Promise((r) => setTimeout(r, 500));
-          actions.resetForm();
-          alert(JSON.stringify(values, null, 2));
+          console.log(actions);
+          try {
+            const result = await axios.post(
+              'https://formspree.io/f/myybvlzo',
+              values
+            );
+            actions.setSubmitting(false);
+            actions.resetForm();
+            notifier('success');
+            console.log(result);
+          } catch (err) {
+            console.log(err);
+            notifier('error');
+            actions.setSubmitting(false);
+          }
         }}
       >
-        <Grid container>
-          <Grid item xs={12}>
-            <Form name='contact' method='post'>
-              <input type='hidden' name='form-name' value='contact' />
-              <Grid container spacing={5} direction='column'>
-                <Grid item container spacing={4} justify='space-between'>
-                  <Grid item className='input-group' xs={12} sm={6}>
-                    <MyInput type='text' label='Name' name='name' />
+        {({ isSubmitting }) => (
+          <Grid container>
+            <Grid item xs={12}>
+              <Form>
+                <Grid container spacing={5} direction='column'>
+                  <Grid item container spacing={4} justify='space-between'>
+                    <Grid item className='input-group' xs={12} sm={6}>
+                      <MyInput type='text' label='Name' name='name' />
+                    </Grid>
+                    <Grid item className='input-group' xs={12} sm={6}>
+                      <MyInput type='text' label='Email Address' name='email' />
+                    </Grid>
                   </Grid>
-                  <Grid item className='input-group' xs={12} sm={6}>
-                    <MyInput type='text' label='Email Address' name='email' />
-                  </Grid>
-                </Grid>
 
-                <Grid item className='input-group'>
-                  <MyInput type='text' label='Subject' name='subject' />
+                  <Grid item className='input-group'>
+                    <MyInput type='text' label='Subject' name='subject' />
+                  </Grid>
+                  <Grid item className='input-group'>
+                    <MyInput
+                      variant='textarea'
+                      rows='6'
+                      cols='50'
+                      type='text'
+                      label='Message'
+                      name='message'
+                    />
+                  </Grid>
+                  <Grid item>
+                    <Button
+                      disabled={isSubmitting}
+                      colorScheme={'green'}
+                      text='Send Message'
+                      clickHandler={clickHandler}
+                    />
+                  </Grid>
                 </Grid>
-                <Grid item className='input-group'>
-                  <MyInput
-                    variant='textarea'
-                    rows='6'
-                    cols='50'
-                    type='text'
-                    label='Message'
-                    name='message'
-                  />
-                </Grid>
-                <Grid item>
-                  <Button
-                    colorScheme={'green'}
-                    text='Send Message'
-                    clickHandler={clickHandler}
-                  />
-                </Grid>
-              </Grid>
-            </Form>
+              </Form>
+            </Grid>
           </Grid>
-        </Grid>
+        )}
       </Formik>
     </>
   );
