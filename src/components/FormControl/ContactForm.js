@@ -15,7 +15,7 @@ const ContactForm = () => {
   };
 
   const clickHandler = () => {
-    notifier('error');
+    return;
   };
   return (
     <>
@@ -34,14 +34,10 @@ const ContactForm = () => {
         onSubmit={async (values, actions) => {
           console.log(actions);
           try {
-            const result = await axios.post(
-              'https://formspree.io/f/myybvlzo',
-              values
-            );
+            await axios.post('https://formspree.io/f/myybvlzo', values);
             actions.setSubmitting(false);
             actions.resetForm();
             notifier('success');
-            console.log(result);
           } catch (err) {
             console.log(err);
             notifier('error');
