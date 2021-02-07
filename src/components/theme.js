@@ -7,6 +7,10 @@ const theme = (mode) => {
       success: {
         main: '#009E66',
       },
+      inputColor: {
+        main: mode === 'dark' ? '#161616' : '#dedede',
+        text: mode === 'dark' ? '#fff' : '#000',
+      },
       cardColor: {
         main: mode === 'dark' ? '#161616' : '#FFF',
       },

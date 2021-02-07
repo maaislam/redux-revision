@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 
 import { motion } from 'framer-motion';
 import { PageAnimation3 } from '../animations/AnimationConfig';
-
+import { useHistory } from 'react-router-dom';
 import LandingText from '../components/LandingText/LandingText';
 import Button from '../components/Button/Button';
 
 const Home = ({ darkMode }) => {
+  let history = useHistory();
   const clickHandler = () => {
-    return;
+    history.push('/contact');
   };
   return (
     <motion.div

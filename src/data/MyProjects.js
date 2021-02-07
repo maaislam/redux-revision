@@ -42,7 +42,7 @@ const projects = [
     title: 'Cortexflo',
     detail: 'Image search App built using React and unsplash api',
     excerpt:
-      'This is a website for a client who operate in the Medical Forensics sector and needed their website to reflect a professional image that matches this environment.',
+      'This is a website for a client who operate in the Medical Forensics sector.',
     clientName: '',
     projectImage: cortexflo,
     techStacks: ['html5', 'ccs3', 'vanilla js', 'AOS, tiltjs & typedjs'],

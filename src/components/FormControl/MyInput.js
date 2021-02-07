@@ -1,19 +1,32 @@
 import React from 'react';
 import { useField } from 'formik';
+import { makeStyles } from '@material-ui/core/styles';
 
 import './form.css';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.inputColor.main,
+    color: theme.palette.inputColor.text,
+  },
+}));
 
 const MyInput = ({ label, variant, ...props }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <input> and alse replace ErrorMessage entirely.
-
+  const classes = useStyles();
   const [field, meta] = useField(props);
 
   const renderInput =
     variant === 'textarea' ? (
-      <textarea type='text' {...field} {...props} />
+      <textarea className={classes.root} type='text' {...field} {...props} />
     ) : (
-      <input type={props.type || 'text'} {...field} {...props} />
+      <input
+        className={classes.root}
+        type={props.type || 'text'}
+        {...field}
+        {...props}
+      />
     );
 
   return (
