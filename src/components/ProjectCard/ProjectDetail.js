@@ -73,7 +73,7 @@ const ProjectDetail = ({
                 {title}
               </Typography>
             </Grid>
-            <Grid item xs={10} md={techStacks.length > 3 ? 8 : 4}>
+            <Grid item xs={10} md={techStacks.length > 3 ? 8 : 4} lg={6}>
               <span className={classes.chipRoots}>
                 {techStacks.map((item) => {
                   return (
