@@ -13,6 +13,7 @@ const ContactForm = () => {
   const notifier = (type) => {
     showNotification(type);
   };
+  const FORMSPREE_ID = process.env.REACT_APP_FORMSPREE_ID;
 
   const clickHandler = () => {
     return;
@@ -34,7 +35,7 @@ const ContactForm = () => {
         onSubmit={async (values, actions) => {
           console.log(actions);
           try {
-            await axios.post('https://formspree.io/f/myybvlzo', values);
+            await axios.post(`https://formspree.io/${FORMSPREE_ID}`, values);
             actions.setSubmitting(false);
             actions.resetForm();
             notifier('success');
@@ -52,15 +53,30 @@ const ContactForm = () => {
                 <Grid container spacing={5} direction='column'>
                   <Grid item container spacing={4} justify='space-between'>
                     <Grid item className='input-group' xs={12} sm={6}>
-                      <MyInput type='text' label='Name' name='name' />
+                      <MyInput
+                        type='text'
+                        label='Name'
+                        name='name'
+                        disabled={isSubmitting}
+                      />
                     </Grid>
                     <Grid item className='input-group' xs={12} sm={6}>
-                      <MyInput type='text' label='Email Address' name='email' />
+                      <MyInput
+                        type='text'
+                        label='Email Address'
+                        name='email'
+                        disabled={isSubmitting}
+                      />
                     </Grid>
                   </Grid>
 
                   <Grid item className='input-group'>
-                    <MyInput type='text' label='Subject' name='subject' />
+                    <MyInput
+                      type='text'
+                      label='Subject'
+                      name='subject'
+                      disabled={isSubmitting}
+                    />
                   </Grid>
                   <Grid item className='input-group'>
                     <MyInput
@@ -70,6 +86,7 @@ const ContactForm = () => {
                       type='text'
                       label='Message'
                       name='message'
+                      disabled={isSubmitting}
                     />
                   </Grid>
                   <Grid item>
