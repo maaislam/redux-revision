@@ -24,7 +24,7 @@ const Portfolio = () => {
   };
 
   const renderProjects = projects.map((item, i) => {
-    const { title, excerpt } = item;
+    const { projectImage, title, excerpt } = item;
 
     return (
       <Grid
@@ -39,11 +39,7 @@ const Portfolio = () => {
           setProjectDetails(item);
         }}
       >
-        <Project
-          imgSource={item.projectImage}
-          title={title}
-          excerpt={excerpt}
-        />
+        <Project imgSource={projectImage} title={title} excerpt={excerpt} />
       </Grid>
     );
   });

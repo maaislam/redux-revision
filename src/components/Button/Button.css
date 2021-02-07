@@ -1,105 +1,112 @@
-
-.btn-dark-mode{
-    position:fixed;
-    top:75%;
-    left:2%;
-    transform:translate(-2%, -75%);
+.btn-dark-mode {
+    position: fixed;
+    top: 75%;
+    left: 2%;
+    transform: translate(-2%, -75%);
     z-index: 50;
-  
+
 }
 
-.pos-github{
-    position:fixed;
-    top:85%;
-    left:2%;
-    transform:translate(-2%, -85%);
+.pos-github {
+    position: fixed;
+    top: 85%;
+    left: 2%;
+    transform: translate(-2%, -85%);
     z-index: 50;
 }
 
-.pos-linkedin{
-    position:fixed;
-    top:95%;
-    left:2%;
-    transform:translate(-2%, -95%);
+.pos-linkedin {
+    position: fixed;
+    top: 95%;
+    left: 2%;
+    transform: translate(-2%, -95%);
     z-index: 50;
-    
+
 }
-@media (max-width:600px){
-    .pos-linkedin{
-        
-        top:95%;
-        left:25%;
-        transform:translate(-25%, -95%);
-        
-    }
-    .pos-github{
-    top:95%;
-    left:50%;
-    transform:translate(-50%, -95%); 
-    }    
-    .btn-dark-mode{
-       
-        top:95%;
-        left:75%;
-        transform:translate(-75%, -95%);
-      
+
+@media (max-width:600px) {
+    .pos-linkedin {
+
+        top: 95%;
+        left: 25%;
+        transform: translate(-25%, -95%);
+
     }
 
+    .pos-github {
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -95%);
+    }
+
+    .btn-dark-mode {
+
+        top: 95%;
+        left: 75%;
+        transform: translate(-75%, -95%);
+
+    }
+
 }
 
-.round{
+.round {
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
     padding: 5px 9px;
     display: inline-block;
-    border-radius:50%;
+    border-radius: 50%;
     cursor: pointer;
     transition: all 0.1s;
-   
+
 }
 
 
-.btn{
+.btn {
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
     padding: 10px 26px;
     display: inline-block;
-    border-radius:30px;
+    border-radius: 30px;
     cursor: pointer;
     transition: all 0.1s;
 
-    
+
 }
+
 .btn:hover {
-   
+
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
+
 .btn:active {
-    
+
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
+
 .round:hover {
-   
+
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
+
 .round:active {
-    
+
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
+
 .btn-white {
     position: relative;
     background-color: #fff;
-    color:#009e66;
+    color: #009e66;
     font-weight: 500;
     font-size: 1.0rem;
     font-weight: 500;
-    line-height:1.5;
+    line-height: 1.5;
 }
 
 .btn-black {
@@ -108,30 +115,33 @@
     color: white;
     font-weight: 400;
     font-size: 1.0rem;
-    line-height:1.5;
+    line-height: 1.5;
 }
+
 .btn-green {
     position: relative;
     background-color: #009e66;
     color: white;
     font-weight: 400;
     font-size: 1.0rem;
-    line-height:1.5;
-    
+    line-height: 1.5;
+
     transform: translateY(-0.1rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
+
 .btn-blue {
     position: relative;
     background-image: linear-gradient(to bottom right, #60a3fa, #6c63ff);
     color: white;
     font-weight: 400;
     font-size: 1.0rem;
-    line-height:1.5;
-    
+    line-height: 1.5;
+
     transform: translateY(-0.1rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
+
 .btn::after {
     content: "";
     display: inline-block;
@@ -142,10 +152,11 @@
     top: 0;
     left: 0;
     z-index: -5;
-    
+
     transition: all 0.5s;
-    
+
 }
+
 .round::after {
     content: "";
     display: inline-block;
@@ -156,43 +167,56 @@
     top: 0;
     left: 0;
     z-index: -5;
-    
+
     transition: all 0.5s;
-    
+
 }
+
 .btn-white::after {
-    
+
     background-color: #fff;
 }
+
 .btn-black::after {
     background-color: #2d3a4c;
 }
+
 .btn-green::after {
-    
+
     background-color: #009e66;
 }
+
 .btn-blue::after {
     background-image: linear-gradient(to bottom right, #60a3fa, #6c63ff);
 }
+
 .btn:hover::after {
-    
-    
+
+
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }
+
 .btn:active::after {
-  
+
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }
+
 .round:hover::after {
-    
-    
+
+
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }
+
 .round:active::after {
-  
+
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
+}
+
+button {
+    border: none;
+    outline: none;
 }

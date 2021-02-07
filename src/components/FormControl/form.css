@@ -1,0 +1,169 @@
+.input-group {
+    position: relative;
+}
+
+input,
+textarea {
+
+    width: 100%;
+    background-color: #161616;
+    border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-bottom: 1px solid #1d1d1d;
+    border-radius: 0;
+    font-size: 15px;
+
+    padding: 9px 14px;
+    color: #fff;
+}
+
+input {
+    height: 44px;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+form {
+
+    width: 100%;
+}
+
+/* LABEL ======================================= */
+label {
+    color: #777;
+    font-size: 15px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 30px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.textarea-label {
+
+    top: 20%;
+    transform: translate(0%, -20%);
+}
+
+textarea:focus~label {
+    top: -2%;
+    left: 20px;
+    transform: translate(0%, 2%);
+    font-size: 14px;
+    color: #3e6440;
+}
+
+/* active state */
+
+input:focus~label {
+    top: -10%;
+    left: 16px;
+    transform: translate(0, 10%);
+    font-size: 14px;
+    color: #3e6440;
+}
+
+.error {
+    position: absolute;
+    color: rgb(192, 30, 30);
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #009E66;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #009E66;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #009E66;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #009E66;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}

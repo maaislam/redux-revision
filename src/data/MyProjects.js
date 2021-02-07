@@ -1,6 +1,7 @@
 import moviebear from '../images/project-image/moviebear.png';
 import shipmentRecord from '../images/project-image/shipment-record.png';
 import imageSearch from '../images/project-image/image-search.jpg';
+import cortexflo from '../images/project-image/cortexflo.png';
 
 const projects = [
   {
@@ -33,9 +34,20 @@ const projects = [
     excerpt: 'Image search App built using React and unsplash api',
     clientName: '',
     projectImage: imageSearch,
-    techStacks: ['react', 'html5', 'ccs3', 'firebase-hosting', 'unsplash-api'],
+    techStacks: ['react', 'ccs3', 'firebase-hosting', 'unsplash-api'],
     sourceCodeLink: 'https://github.com/maaislam/PhoenixImageSearch',
     liveDemoLink: 'https://phoenix-image-search.web.app/',
+  },
+  {
+    title: 'Cortexflo',
+    detail: 'Image search App built using React and unsplash api',
+    excerpt:
+      'This is a website for a client who operate in the Medical Forensics sector and needed their website to reflect a professional image that matches this environment.',
+    clientName: '',
+    projectImage: cortexflo,
+    techStacks: ['html5', 'ccs3', 'vanilla js', 'AOS, tiltjs & typedjs'],
+    sourceCodeLink: 'https://github.com/maaislam/cortexflo',
+    liveDemoLink: 'https://maaislam.github.io/cortexflo/',
   },
 ];
 

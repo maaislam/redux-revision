@@ -56,7 +56,7 @@ const ProjectDetail = ({
         <CardMedia
           component='img'
           alt='Contemplative Reptile'
-          height='250'
+          height='450'
           image={projectImage || defImg}
           title='Contemplative Reptile'
         />
@@ -101,7 +101,7 @@ const ProjectDetail = ({
             Details:
           </Typography>
           <Typography variant='body2' color='textSecondary' component='p'>
-            {detail}
+            {detail || ''}
           </Typography>
         </CardContent>
         <CardActions className={classes.spacing}>

@@ -2,16 +2,17 @@ import React from 'react';
 
 import './Button.css';
 
-const ButtonTemplate = ({ colorScheme, text, btnType, clickHandler }) => {
+const ButtonTemplate = ({ colorScheme, text, btnType, clickHandler, type }) => {
   return (
-    <span
+    <button
+      type={type || 'submit'}
       onClick={() => clickHandler()}
       className={` btn-${colorScheme} ${
         btnType === 'normal' ? 'btn' : 'round'
       }`}
     >
       {text}
-    </span>
+    </button>
   );
 };
 ButtonTemplate.defaultProps = {
