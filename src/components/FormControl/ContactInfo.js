@@ -61,7 +61,7 @@ const ContactInfo = () => {
           </Grid>
         </Grid>
         <Grid item container style={{ paddingBottom: 0 }}>
-          <Grid xs={2}>
+          <Grid item xs={2}>
             <IoMdMap color='#009E66' size='40' />
           </Grid>
           <Grid
@@ -81,7 +81,7 @@ const ContactInfo = () => {
           </Grid>
         </Grid>
         <Grid item container style={{ paddingBottom: 0 }}>
-          <Grid xs={2}>
+          <Grid item xs={2}>
             <IoMdCall color='#009E66' size='40' />
           </Grid>
           <Grid
@@ -104,7 +104,7 @@ const ContactInfo = () => {
           </Grid>
         </Grid>
         <Grid item container style={{ paddingBottom: 0 }}>
-          <Grid xs={2}>
+          <Grid item xs={2}>
             <IoMdSend color='#009E66' size='40' />
           </Grid>
           <Grid

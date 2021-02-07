@@ -59,7 +59,8 @@ label {
     transform: translate(0%, -20%);
 }
 
-textarea:focus~label {
+textarea:focus~label,
+.textarea-visited {
     top: -2%;
     left: 20px;
     transform: translate(0%, 2%);
@@ -69,13 +70,15 @@ textarea:focus~label {
 
 /* active state */
 
-input:focus~label {
+input:focus~label,
+.input-visited {
     top: -10%;
     left: 16px;
     transform: translate(0, 10%);
     font-size: 14px;
     color: #3e6440;
 }
+
 
 .error {
     position: absolute;

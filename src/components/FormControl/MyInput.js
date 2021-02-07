@@ -22,7 +22,13 @@ const MyInput = ({ label, variant, ...props }) => {
       <span className='highlight'></span>
       <span className='bar'></span>
       <label
-        className={variant === 'textarea' ? 'textarea-label' : ''}
+        className={`${variant === 'textarea' ? 'textarea-label' : ''} ${
+          meta.touched
+            ? variant === 'textarea'
+              ? 'textarea-visited'
+              : 'input-visited'
+            : ''
+        }`}
         htmlFor={props.id || props.name}
       >
         {label}
