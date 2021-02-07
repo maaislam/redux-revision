@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: 'absolute',
     width: '100%',
+
     backgroundColor: theme.palette.cardColor.main,
   },
   spacing: {
@@ -35,6 +36,14 @@ const useStyles = makeStyles((theme) => ({
   chipSpacing: {
     margin: theme.spacing(1),
     marginLeft: theme.spacing(0),
+  },
+  imagetFit: {
+    objectFit: 'contain',
+    borderBottom: `2px solid ${theme.palette.success.main}`,
+
+    '@media (max-width:600px)': {
+      objectFit: 'cover',
+    },
   },
 }));
 
@@ -54,11 +63,12 @@ const ProjectDetail = ({
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
+          className={classes.imagetFit}
           component='img'
-          alt='Contemplative Reptile'
+          alt={title}
           height='450'
           image={projectImage || defImg}
-          title='Contemplative Reptile'
+          title={title}
         />
         <CardContent>
           <Grid
@@ -73,7 +83,12 @@ const ProjectDetail = ({
                 {title}
               </Typography>
             </Grid>
-            <Grid item xs={10} md={techStacks.length > 3 ? 8 : 4} lg={6}>
+            <Grid
+              item
+              xs={10}
+              md={techStacks.length > 3 ? 8 : 4}
+              lg={techStacks.length > 3 ? 6 : 4}
+            >
               <span className={classes.chipRoots}>
                 {techStacks.map((item) => {
                   return (
