@@ -46,7 +46,7 @@ const Contact = () => {
           container
           item
           xs={12}
-          lg={10}
+          sm={10}
           spacing={8}
           justify='center'
           style={{ marginTop: '4rem' }}
