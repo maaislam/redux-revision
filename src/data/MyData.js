@@ -24,6 +24,16 @@ const jobDetails = [
   'Manage a user guide to help clients understandsite features and management of website to increase visitor satisfaction.',
 ];
 
+const respAt52 = [
+  'Develop the latest user-facing features using React.js.',
+  'Design a modern highly responsive web-based user interface.',
+  'Build reusable components and front-end libraries for future use.',
+  'Translate designs and wireframes into high-quality code.',
+  'Learn and understand user interactions.',
+  'Optimize components for maximum performance across a vast array of web-capable devices and browsers.',
+  'Coordinate with various teams working on distinct layers.',
+];
+
 export const expDetails = [
   {
     title: 'Front-End Engineer',
@@ -33,6 +43,6 @@ export const expDetails = [
   {
     title: 'Software Engineer',
     detail: 'Fifty Two Digital / 2019 - Present',
-    description: [],
+    description: respAt52,
   },
 ];
