@@ -13,7 +13,7 @@ const ContactForm = () => {
   const notifier = (type) => {
     showNotification(type);
   };
-  const FORMSPREE_ID = process.env.REACT_APP_FORMSPREE_ID;
+  const FORMSPREE_ID = 'f/myybvlzo'; //process.env.REACT_APP_FORMSPREE_ID;
 
   const clickHandler = () => {
     return;
